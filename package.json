@@ -1,0 +1,24 @@
+{
+  "name": "advent-of-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcobiedermann/advent-of-code.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcobiedermann/advent-of-code/issues"
+  },
+  "homepage": "https://github.com/marcobiedermann/advent-of-code#readme",
+  "devDependencies": {
+    "@types/node": "^12.12.17",
+    "typescript": "^3.7.3"
+  }
+}

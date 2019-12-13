@@ -1,6 +1,6 @@
 import { readFileSync } from "fs";
 
-const input = readFileSync("./input.txt", "utf-8");
+const input = readFileSync(`${__dirname}/input.txt`, "utf-8");
 
 function calculateMass(mass: number) {
   return Math.floor(mass / 3) - 2;

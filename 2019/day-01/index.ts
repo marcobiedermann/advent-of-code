@@ -12,8 +12,7 @@ function sum(accumulator: number, currentValue: number) {
 
 const totalFuel = input
   .split("\n")
-  .map(input => parseInt(input, 10))
-  .map(calculateMass)
+  .map(mass => calculateMass(parseInt(mass, 10)))
   .reduce(sum);
 
 totalFuel;

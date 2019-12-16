@@ -1,6 +1,6 @@
-import { readFileSync } from "fs";
+import { readFileSync } from 'fs';
 
-const input = readFileSync(`${__dirname}/input.txt`, "utf-8");
+const input = readFileSync(`${__dirname}/input.txt`, 'utf-8');
 
 function calculateMass(mass: number) {
   return Math.floor(mass / 3) - 2;
@@ -11,7 +11,7 @@ function sum(accumulator: number, currentValue: number) {
 }
 
 const totalFuel = input
-  .split("\n")
+  .split('\n')
   .map(mass => calculateMass(parseInt(mass, 10)))
   .reduce(sum);
 

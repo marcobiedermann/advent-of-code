@@ -37,7 +37,7 @@ function getRibbon(present: number[]): number {
   return smallestPerimeter + volume;
 }
 
-const mappedPresents = presents.map(present => present.split('x').map(Number));
+const mappedPresents = presents.map((present) => present.split('x').map(Number));
 
 const totalPaper = mappedPresents.reduce((accumulator, currentValue) => {
   return accumulator + getPaper(currentValue);

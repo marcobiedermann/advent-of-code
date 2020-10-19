@@ -6,8 +6,8 @@ Fortunately, every present is a box (a perfect [right rectangular prism](https:/
 
 For example:
 
-*   A present with dimensions `2x3x4` requires `2*6 + 2*12 + 2*8 = 52` square feet of wrapping paper plus `6` square feet of slack, for a total of `58` square feet.
-*   A present with dimensions `1x1x10` requires `2*1 + 2*10 + 2*10 = 42` square feet of wrapping paper plus `1` square foot of slack, for a total of `43` square feet.
+- A present with dimensions `2x3x4` requires `2*6 + 2*12 + 2*8 = 52` square feet of wrapping paper plus `6` square feet of slack, for a total of `58` square feet.
+- A present with dimensions `1x1x10` requires `2*1 + 2*10 + 2*10 = 42` square feet of wrapping paper plus `1` square foot of slack, for a total of `43` square feet.
 
 All numbers in the elves' list are in <span title="Yes, I realize most of these presents are luxury yachts.">feet</span>. How many total _square feet of wrapping paper_ should they order?
 
@@ -21,14 +21,14 @@ The ribbon required to wrap a present is the shortest distance around its sides,
 
 For example:
 
-*   A present with dimensions `2x3x4` requires `2+2+3+3 = 10` feet of ribbon to wrap the present plus `2*3*4 = 24` feet of ribbon for the bow, for a total of `34` feet.
-*   A present with dimensions `1x1x10` requires `1+1+1+1 = 4` feet of ribbon to wrap the present plus `1*1*10 = 10` feet of ribbon for the bow, for a total of `14` feet.
+- A present with dimensions `2x3x4` requires `2+2+3+3 = 10` feet of ribbon to wrap the present plus `2*3*4 = 24` feet of ribbon for the bow, for a total of `34` feet.
+- A present with dimensions `1x1x10` requires `1+1+1+1 = 4` feet of ribbon to wrap the present plus `1*1*10 = 10` feet of ribbon for the bow, for a total of `14` feet.
 
 How many total _feet of ribbon_ should they order?
 
 Your puzzle answer was `3812909`.
 
-Both parts of this puzzle are complete! They provide two gold stars: **
+Both parts of this puzzle are complete! They provide two gold stars: \*\*
 
 At this point, you should [return to your Advent calendar](/2015) and try another puzzle.
 

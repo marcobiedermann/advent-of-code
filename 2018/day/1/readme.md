@@ -1,5 +1,4 @@
-\--- Day 1: Chronal Calibration ---
------------------------------------
+## \--- Day 1: Chronal Calibration ---
 
 "We've detected some temporal anomalies," one of Santa's Elves at the Temporal Anomaly Research and Detection Instrument Station tells you. She sounded pretty worried when she called you down here. "At 500-year intervals into the past, someone has been changing Santa's history!"
 
@@ -13,17 +12,17 @@ After feeling like you've been falling for a few minutes, you look at the device
 
 For example, if the device displays frequency changes of `+1, -2, +3, +1`, then starting from a frequency of zero, the following changes would occur:
 
-*   Current frequency ` 0`, change of `+1`; resulting frequency ` 1`.
-*   Current frequency ` 1`, change of `-2`; resulting frequency `-1`.
-*   Current frequency `-1`, change of `+3`; resulting frequency ` 2`.
-*   Current frequency ` 2`, change of `+1`; resulting frequency ` 3`.
+- Current frequency ` 0`, change of `+1`; resulting frequency ` 1`.
+- Current frequency ` 1`, change of `-2`; resulting frequency `-1`.
+- Current frequency `-1`, change of `+3`; resulting frequency ` 2`.
+- Current frequency ` 2`, change of `+1`; resulting frequency ` 3`.
 
 In this example, the resulting frequency is `3`.
 
 Here are other example situations:
 
-*   `+1, +1, +1` results in ` 3`
-*   `+1, +1, -2` results in ` 0`
-*   `-1, -2, -3` results in `-6`
+- `+1, +1, +1` results in ` 3`
+- `+1, +1, -2` results in ` 0`
+- `-1, -2, -3` results in `-6`
 
 Starting with a frequency of zero, _what is the resulting frequency_ after all of the changes in frequency have been applied?

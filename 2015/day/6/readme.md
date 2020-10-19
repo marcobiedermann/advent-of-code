@@ -1,5 +1,4 @@
-\--- Day 6: Probably a Fire Hazard ---
---------------------------------------
+## \--- Day 6: Probably a Fire Hazard ---
 
 Because your neighbors keep defeating you in the holiday house decorating contest year after year, you've decided to deploy one million lights in a 1000x1000 grid.
 
@@ -11,9 +10,9 @@ To defeat your neighbors this year, all you have to do is set up your lights by 
 
 For example:
 
-*   `turn on 0,0 through 999,999` would turn on (or leave on) every light.
-*   `toggle 0,0 through 999,0` would toggle the first line of 1000 lights, turning off the ones that were on, and turning on the ones that were off.
-*   `turn off 499,499 through 500,500` would turn off (or leave off) the middle four lights.
+- `turn on 0,0 through 999,999` would turn on (or leave on) every light.
+- `toggle 0,0 through 999,0` would toggle the first line of 1000 lights, turning off the ones that were on, and turning on the ones that were off.
+- `turn off 499,499 through 500,500` would turn off (or leave off) the middle four lights.
 
 After following the instructions, _how many lights are lit_?
 
@@ -21,8 +20,7 @@ Your puzzle answer was `377891`.
 
 The first half of this puzzle is complete! It provides one gold star: \*
 
-\--- Part Two ---
------------------
+## \--- Part Two ---
 
 You just finish implementing your winning light pattern when you realize you mistranslated Santa's message from Ancient Nordic Elvish.
 
@@ -38,11 +36,11 @@ What is the _total brightness_ of all lights combined after following Santa's in
 
 For example:
 
-*   `turn on 0,0 through 0,0` would increase the total brightness by `1`.
-*   `toggle 0,0 through 999,999` would increase the total brightness by `2000000`.
+- `turn on 0,0 through 0,0` would increase the total brightness by `1`.
+- `toggle 0,0 through 999,999` would increase the total brightness by `2000000`.
 
 Although it hasn't changed, you can still [get your puzzle input](6/input).
 
 Answer:
 
-You can also \[Shareon [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+Part+One+of+%22Probably+a+Fire+Hazard%22+%2D+Day+6+%2D+Advent+of+Code+2015&url=https%3A%2F%2Fadventofcode%2Ecom%2F2015%2Fday%2F6&related=ericwastl&hashtags=AdventOfCode) [Mastodon](javascript:void(0);)\] this puzzle.
+You can also \[Shareon [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+Part+One+of+%22Probably+a+Fire+Hazard%22+%2D+Day+6+%2D+Advent+of+Code+2015&url=https%3A%2F%2Fadventofcode%2Ecom%2F2015%2Fday%2F6&related=ericwastl&hashtags=AdventOfCode) [Mastodon](<javascript:void(0);>)\] this puzzle.

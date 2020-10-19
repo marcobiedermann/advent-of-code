@@ -1,6 +1,6 @@
 import { part1, part2 } from '.';
 
-const input = '1113122113'
+const input = '1113122113';
 
 describe('Day 10', () => {
   describe('Part 1', () => {

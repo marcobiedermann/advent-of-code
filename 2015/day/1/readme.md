@@ -14,11 +14,11 @@ The apartment building is very tall, and the basement is very deep; he will neve
 
 For example:
 
-*   `(())` and `()()` both result in floor `0`.
-*   `(((` and `(()(()(` both result in floor `3`.
-*   `))(((((` also results in floor `3`.
-*   `())` and `))(` both result in floor `-1` (the first basement level).
-*   `)))` and `)())())` both result in floor `-3`.
+- `(())` and `()()` both result in floor `0`.
+- `(((` and `(()(()(` both result in floor `3`.
+- `))(((((` also results in floor `3`.
+- `())` and `))(` both result in floor `-1` (the first basement level).
+- `)))` and `)())())` both result in floor `-3`.
 
 To _what floor_ do the instructions take Santa?
 
@@ -32,14 +32,14 @@ Now, given the same instructions, find the _position_ of the first character tha
 
 For example:
 
-*   `)` causes him to enter the basement at character position `1`.
-*   `()())` causes him to enter the basement at character position `5`.
+- `)` causes him to enter the basement at character position `1`.
+- `()())` causes him to enter the basement at character position `5`.
 
 What is the _position_ of the character that causes Santa to first enter the basement?
 
 Your puzzle answer was `1797`.
 
-Both parts of this puzzle are complete! They provide two gold stars: **
+Both parts of this puzzle are complete! They provide two gold stars: \*\*
 
 At this point, you should [return to your Advent calendar](/2015) and try another puzzle.
 

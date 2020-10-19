@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs';
 import { part1 } from '.';
 
-const input = readFileSync(`${__dirname}/input.txt`, 'utf-8')
+const input = readFileSync(`${__dirname}/input`, 'utf-8')
   .split('\n')
   .map((row) => row.split('\t').map(Number));
 

@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs';
 import { part1 } from '.';
 
-const input = readFileSync(`${__dirname}/input.txt`, 'utf-8').split('').map(Number);
+const input = readFileSync(`${__dirname}/input`, 'utf-8').split('').map(Number);
 
 describe('Day 1', () => {
   describe('Part 1', () => {

@@ -1,8 +1,8 @@
 {
   "name": "advent-of-code",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "My attempt of solving Advent of Code puzzles.",
+  "private": true,
   "scripts": {
     "check": "tsc --noEmit",
     "format": "prettier --write .",
@@ -12,9 +12,17 @@
     "type": "git",
     "url": "git+https://github.com/marcobiedermann/advent-of-code.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "advent-of-code",
+    "advent",
+    "algorithms",
+    "christmas",
+    "problem-solving",
+    "puzzle",
+    "solutions"
+  ],
+  "author": "Marco Biedermann",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/marcobiedermann/advent-of-code/issues"
   },

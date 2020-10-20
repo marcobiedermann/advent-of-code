@@ -1,3 +1,5 @@
+/* eslint-disable import/prefer-default-export */
+
 function intToDigits(int = 0): number[] {
   if (int < 10) {
     return [int];

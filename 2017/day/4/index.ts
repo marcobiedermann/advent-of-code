@@ -1,3 +1,5 @@
+/* eslint-disable import/prefer-default-export */
+
 function part1(passphrases: string[]): number {
   return passphrases.filter((passphrase) => {
     const words = passphrase.split(' ');

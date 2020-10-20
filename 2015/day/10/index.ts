@@ -3,7 +3,7 @@ function processInput(input: string): string {
     const { length } = currentValue;
     const [value] = currentValue;
 
-    return accumulator + `${length}${value}`;
+    return `${accumulator}${length}${value}`;
   }, '');
 }
 

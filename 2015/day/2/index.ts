@@ -1,9 +1,3 @@
-import { readFileSync } from 'fs';
-
-const input = readFileSync(`${__dirname}/input`, 'utf-8');
-
-const presents = input.split('\n');
-
 function getArea(a: number, b: number): number {
   return a * b;
 }
@@ -37,15 +31,24 @@ function getRibbon(present: number[]): number {
   return smallestPerimeter + volume;
 }
 
-const mappedPresents = presents.map((present) => present.split('x').map(Number));
+function part1(input: string[]): number {
+  const mappedPresents = input.map((present) => present.split('x').map(Number));
 
-const totalPaper = mappedPresents.reduce((accumulator, currentValue) => {
-  return accumulator + getPaper(currentValue);
-}, 0);
+  const totalPaper = mappedPresents.reduce((accumulator, currentValue) => {
+    return accumulator + getPaper(currentValue);
+  }, 0);
 
-const totalRibbon = mappedPresents.reduce((accumulator, currentValue) => {
-  return accumulator + getRibbon(currentValue);
-}, 0);
+  return totalPaper;
+}
 
-totalPaper;
-totalRibbon;
+function part2(input: string[]): number {
+  const mappedPresents = input.map((present) => present.split('x').map(Number));
+
+  const totalRibbon = mappedPresents.reduce((accumulator, currentValue) => {
+    return accumulator + getRibbon(currentValue);
+  }, 0);
+
+  return totalRibbon;
+}
+
+export { part1, part2 };

@@ -1,5 +1,2 @@
-!.env.sample
-.env*
-
 coverage
 node_modules

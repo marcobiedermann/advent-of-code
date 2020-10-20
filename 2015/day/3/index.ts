@@ -1,3 +1,5 @@
+/* eslint-disable import/prefer-default-export */
+
 const directions = new Map<string, [number, number]>([
   ['^', [0, 1]],
   ['>', [1, 0]],

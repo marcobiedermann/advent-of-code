@@ -10,7 +10,9 @@ interface Instruction {
 
 function parseInstruction(instruction: string): Instruction {
   const { groups } =
-    instruction.match(/(?<command>turn on|turn off|toggle) (?<x1>\d+),(?<y1>\d+) through (?<x2>\d+),(?<y2>\d+)/) || [];
+    instruction.match(
+      /(?<command>turn on|turn off|toggle) (?<x1>\d+),(?<y1>\d+) through (?<x2>\d+),(?<y2>\d+)/,
+    ) || [];
 
   if (!groups) {
     return {

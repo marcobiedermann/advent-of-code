@@ -19,8 +19,9 @@ function filterIncreasingAndAdjacentDigits(number: number): boolean {
 }
 
 function part1(lower: number, upper: number): number {
-  return Array.from({ length: upper - lower }, (_, index) => index + lower).filter(filterIncreasingAndAdjacentDigits)
-    .length;
+  return Array.from({ length: upper - lower }, (_, index) => index + lower).filter(
+    filterIncreasingAndAdjacentDigits,
+  ).length;
 }
 
 export { part1 };

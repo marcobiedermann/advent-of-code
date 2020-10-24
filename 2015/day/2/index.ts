@@ -31,24 +31,22 @@ function getRibbon(present: number[]): number {
   return smallestPerimeter + volume;
 }
 
+function parsePresents(presents: string[]): number[][] {
+  return presents.map((present) => present.split('x').map(Number));
+}
+
 function part1(input: string[]): number {
-  const mappedPresents = input.map((present) => present.split('x').map(Number));
-
-  const totalPaper = mappedPresents.reduce((accumulator, currentValue) => {
-    return accumulator + getPaper(currentValue);
-  }, 0);
-
-  return totalPaper;
+  return parsePresents(input).reduce(
+    (accumulator, currentValue) => accumulator + getPaper(currentValue),
+    0,
+  );
 }
 
 function part2(input: string[]): number {
-  const mappedPresents = input.map((present) => present.split('x').map(Number));
-
-  const totalRibbon = mappedPresents.reduce((accumulator, currentValue) => {
-    return accumulator + getRibbon(currentValue);
-  }, 0);
-
-  return totalRibbon;
+  return parsePresents(input).reduce(
+    (accumulator, currentValue) => accumulator + getRibbon(currentValue),
+    0,
+  );
 }
 
 export { part1, part2 };

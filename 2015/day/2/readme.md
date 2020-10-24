@@ -1,4 +1,4 @@
-## --- Day 2: I Was Told There Would Be No Math ---
+## \--- Day 2: I Was Told There Would Be No Math ---
 
 The elves are running low on wrapping paper, and so they need to submit an order for more. They have a list of the dimensions (length `l`, width `w`, and height `h`) of each present, and only want to order exactly as much as they need.
 
@@ -9,11 +9,11 @@ For example:
 - A present with dimensions `2x3x4` requires `2*6 + 2*12 + 2*8 = 52` square feet of wrapping paper plus `6` square feet of slack, for a total of `58` square feet.
 - A present with dimensions `1x1x10` requires `2*1 + 2*10 + 2*10 = 42` square feet of wrapping paper plus `1` square foot of slack, for a total of `43` square feet.
 
-All numbers in the elves' list are in <span title="Yes, I realize most of these presents are luxury yachts.">feet</span>. How many total _square feet of wrapping paper_ should they order?
+All numbers in the elves' list are in feet. How many total _square feet of wrapping paper_ should they order?
 
 Your puzzle answer was `1598415`.
 
-## --- Part Two ---
+## \--- Part Two ---
 
 The elves are also running low on ribbon. Ribbon is all the same width, so they only have to worry about the length they need to order, which they would again like to be exact.
 
@@ -34,4 +34,4 @@ At this point, you should [return to your Advent calendar](/2015) and try anothe
 
 If you still want to see it, you can [get your puzzle input](2/input).
 
-You can also Share on [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+%22I+Was+Told+There+Would+Be+No+Math%22+%2D+Day+2+%2D+Advent+of+Code+2015&url=https%3A%2F%2Fadventofcode%2Ecom%2F2015%2Fday%2F2&related=ericwastl&hashtags=AdventOfCode) this puzzle.
+You can also \[Shareon [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+%22I+Was+Told+There+Would+Be+No+Math%22+%2D+Day+2+%2D+Advent+of+Code+2015&url=https%3A%2F%2Fadventofcode%2Ecom%2F2015%2Fday%2F2&related=ericwastl&hashtags=AdventOfCode) [Mastodon](<javascript:void(0);>)\] this puzzle.

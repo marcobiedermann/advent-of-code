@@ -1,14 +1,33 @@
-/* eslint-disable import/prefer-default-export */
+function part1(input: string): number {
+  let floor = 0;
 
-function part1(input: string[]): number {
-  return input.reduce((accumulator, currentValue, index) => {
-    const floor = currentValue === '(' ? accumulator + 1 : accumulator - 1;
+  for (let i = 0; i < input.length; i += 1) {
+    if (input[i] === '(') {
+      floor += 1;
+    } else {
+      floor -= 1;
+    }
+  }
 
-    if (floor === -1) {
-      console.log('Enter Basement at position: ', index + 1);
+  return floor;
+}
+
+function part2(input: string): number {
+  let floor = 0;
+
+  for (let i = 0; i < input.length; i += 1) {
+    if (input[i] === '(') {
+      floor += 1;
+    } else {
+      floor -= 1;
     }
 
-    return floor;
-  }, 0);
+    if (floor === -1) {
+      return i + 1;
+    }
+  }
+
+  return -1;
 }
-export { part1 };
+
+export { part1, part2 };

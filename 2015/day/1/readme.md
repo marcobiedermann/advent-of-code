@@ -1,8 +1,8 @@
-## --- Day 1: Not Quite Lisp ---
+## \--- Day 1: Not Quite Lisp ---
 
 Santa was hoping for a white Christmas, but his weather machine's "snow" function is powered by stars, and he's fresh out! To save Christmas, he needs you to collect _fifty stars_ by December 25th.
 
-Collect stars by helping Santa solve puzzles. Two puzzles will be made available on each day in the Advent calendar; the second puzzle is unlocked when you complete the first. Each puzzle grants _one star_. Good luck!</span>
+Collect stars by helping Santa solve puzzles. Two puzzles will be made available on each day in the Advent calendar; the second puzzle is unlocked when you complete the first. Each puzzle grants _one star_. Good luck!
 
 Here's an easy puzzle to warm you up.
 
@@ -22,11 +22,9 @@ For example:
 
 To _what floor_ do the instructions take Santa?
 
-</article>
-
 Your puzzle answer was `280`.
 
-## --- Part Two ---
+## \--- Part Two ---
 
 Now, given the same instructions, find the _position_ of the first character that causes him to enter the basement (floor `-1`). The first character in the instructions has position `1`, the second character has position `2`, and so on.
 
@@ -45,4 +43,4 @@ At this point, you should [return to your Advent calendar](/2015) and try anothe
 
 If you still want to see it, you can [get your puzzle input](1/input).
 
-You can also Share on [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+%22Not+Quite+Lisp%22+%2D+Day+1+%2D+Advent+of+Code+2015&url=https%3A%2F%2Fadventofcode%2Ecom%2F2015%2Fday%2F1&related=ericwastl&hashtags=AdventOfCode) this puzzle.
+You can also \[Shareon [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+%22Not+Quite+Lisp%22+%2D+Day+1+%2D+Advent+of+Code+2015&url=https%3A%2F%2Fadventofcode%2Ecom%2F2015%2Fday%2F1&related=ericwastl&hashtags=AdventOfCode) [Mastodon](<javascript:void(0);>)\] this puzzle.

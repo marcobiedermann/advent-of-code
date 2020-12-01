@@ -27,8 +27,6 @@ Of course, your expense report is much larger. _Find the two entries that sum to
 
 Your puzzle answer was `902451`.
 
-The first half of this puzzle is complete! It provides one gold star: \*
-
 ## \--- Part Two ---
 
 The Elves in accounting are thankful for your help; one of them even offers you a starfish coin they had left over from a past vacation. They offer you a second one if you can find _three_ numbers in your expense report that meet the same criteria.
@@ -37,8 +35,12 @@ Using the above example again, the three entries that sum to `2020` are `979`, `
 
 In your expense report, _what is the product of the three entries that sum to `2020`?_
 
-Answer:
+Your puzzle answer was `85555470`.
 
-Although it hasn't changed, you can still [get your puzzle input](1/input).
+Both parts of this puzzle are complete! They provide two gold stars: \*\*
 
-You can also \[Shareon [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+Part+One+of+%22Report+Repair%22+%2D+Day+1+%2D+Advent+of+Code+2020&url=https%3A%2F%2Fadventofcode%2Ecom%2F2020%2Fday%2F1&related=ericwastl&hashtags=AdventOfCode) [Mastodon](<javascript:void(0);>)\] this puzzle.
+At this point, you should [return to your Advent calendar](/2020) and try another puzzle.
+
+If you still want to see it, you can [get your puzzle input](1/input).
+
+You can also \[Shareon [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+%22Report+Repair%22+%2D+Day+1+%2D+Advent+of+Code+2020&url=https%3A%2F%2Fadventofcode%2Ecom%2F2020%2Fday%2F1&related=ericwastl&hashtags=AdventOfCode) [Mastodon](<javascript:void(0);>)\] this puzzle.

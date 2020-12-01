@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export, no-eval */
-
 function part1(input: number[], target: number): number | undefined {
   const set = new Set<number>();
 
@@ -17,4 +15,38 @@ function part1(input: number[], target: number): number | undefined {
   return undefined;
 }
 
-export { part1 };
+function subtract(a: number, b: number): number {
+  return a - b;
+}
+
+function part2(input: number[], target: number): number | undefined {
+  const { length } = input;
+  const sorted = [...input].sort(subtract);
+
+  for (let i = 0; i < length - 2; i += 1) {
+    let l = i + 1;
+    let h = length - 1;
+
+    while (l < h) {
+      const current = sorted[i];
+      const low = sorted[l];
+      const high = sorted[h];
+
+      const sum = current + low + high;
+
+      if (sum === target) {
+        return current * low * high;
+      }
+
+      if (sum > target) {
+        h -= 1;
+      } else {
+        l += 1;
+      }
+    }
+  }
+
+  return undefined;
+}
+
+export { part1, part2 };

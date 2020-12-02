@@ -1,27 +1,72 @@
-/* eslint-disable import/prefer-default-export */
+function isIncreasing(number: string): boolean {
+  for (let i = 0; i < number.length - 1; i += 1) {
+    const current = number[i];
+    const next = number[i + 1];
 
-function intToDigits(int = 0): number[] {
-  if (int < 10) {
-    return [int];
+    if (current > next) {
+      return false;
+    }
   }
 
-  return [...intToDigits(Math.floor(int / 10)), int % 10];
+  return true;
 }
 
-function filterIncreasingAndAdjacentDigits(number: number): boolean {
-  const digits = intToDigits(number);
-  const slicedDigits = digits.slice(0, -1);
+function isAdjacent(number: string): boolean {
+  let result = false;
 
-  return (
-    slicedDigits.every((digit, index) => digit <= digits[index + 1]) &&
-    slicedDigits.some((digit, index) => digit === digits[index + 1])
+  for (let i = 0; i < number.length - 1; i += 1) {
+    const current = number[i];
+    const next = number[i + 1];
+
+    if (current === next) {
+      result = true;
+    }
+  }
+
+  return result;
+}
+
+function countLetters(input: string): Map<string, number> {
+  const map = new Map<string, number>();
+
+  for (let i = 0; i < input.length; i += 1) {
+    const current = input[i];
+
+    map.set(current, (map.get(current) || 0) + 1);
+  }
+
+  return map;
+}
+
+function find(map: Map<string, number>): boolean {
+  return !![...map].find(([_key, value]) => {
+    return value === 2;
+  });
+}
+
+function isIncreasingAndAdjacent(number: string): boolean {
+  return isIncreasing(number) && isAdjacent(number);
+}
+
+function isIncreasingAndStrictAdjacent(number: string): boolean {
+  return isIncreasing(number) && find(countLetters(number));
+}
+
+function generateInput(lower: number, upper: number): string[] {
+  return Array.from(
+    {
+      length: upper - lower,
+    },
+    (_, index) => (index + lower).toString(),
   );
 }
 
-function part1(lower: number, upper: number): number {
-  return Array.from({ length: upper - lower }, (_, index) => index + lower).filter(
-    filterIncreasingAndAdjacentDigits,
-  ).length;
+function part1(lower: number, upper = lower + 1): number {
+  return generateInput(lower, upper).filter(isIncreasingAndAdjacent).length;
 }
 
-export { part1 };
+function part2(lower: number, upper = lower + 1): number {
+  return generateInput(lower, upper).filter(isIncreasingAndStrictAdjacent).length;
+}
+
+export { part1, part2 };

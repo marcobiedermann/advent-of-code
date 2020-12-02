@@ -78,7 +78,7 @@ My attempt of solving [Advent of Code](https://adventofcode.com/) puzzles in Jav
 | [Day 7](2019/day/7)   |       |
 | [Day 6](2019/day/6)   |       |
 | [Day 5](2019/day/5)   |       |
-| [Day 4](2019/day/4)   | ⭐    |
+| [Day 4](2019/day/4)   | ⭐⭐  |
 | [Day 3](2019/day/3)   |       |
 | [Day 2](2019/day/2)   | ⭐    |
 | [Day 1](2019/day/1)   | ⭐⭐  |

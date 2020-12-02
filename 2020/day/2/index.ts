@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 interface ParsedInput {
   lowest: number;
   highest: number;
@@ -32,6 +30,10 @@ function getOccurrences(password: string, letter: string): number {
   return matches.length;
 }
 
+function xor(a: boolean, b: boolean): boolean {
+  return !a !== !b;
+}
+
 function part1(inputList: string[]): number {
   return inputList.filter((input) => {
     const { lowest, highest, letter, password } = parseInput(input);
@@ -41,4 +43,12 @@ function part1(inputList: string[]): number {
   }).length;
 }
 
-export { part1 };
+function part2(inputList: string[]): number {
+  return inputList.filter((input) => {
+    const { lowest, highest, letter, password } = parseInput(input);
+
+    return xor(password[lowest - 1] === letter, password[highest - 1] === letter);
+  }).length;
+}
+
+export { part1, part2 };

@@ -22,8 +22,6 @@ _How many passwords are valid_ according to their policies?
 
 Your puzzle answer was `422`.
 
-The first half of this puzzle is complete! It provides one gold star: \*
-
 ## \--- Part Two ---
 
 While it appears you validated the passwords correctly, they don't seem to be what the Official Toboggan Corporate Authentication System is expecting.
@@ -40,8 +38,12 @@ Given the same example list from above:
 
 _How many passwords are valid_ according to the new interpretation of the policies?
 
-Answer:
+Your puzzle answer was `451`.
 
-Although it hasn't changed, you can still [get your puzzle input](2/input).
+Both parts of this puzzle are complete! They provide two gold stars: \*\*
 
-You can also \[Shareon [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+Part+One+of+%22Password+Philosophy%22+%2D+Day+2+%2D+Advent+of+Code+2020&url=https%3A%2F%2Fadventofcode%2Ecom%2F2020%2Fday%2F2&related=ericwastl&hashtags=AdventOfCode) [Mastodon](<javascript:void(0);>)\] this puzzle.
+At this point, you should [return to your Advent calendar](/2020) and try another puzzle.
+
+If you still want to see it, you can [get your puzzle input](2/input).
+
+You can also \[Shareon [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+%22Password+Philosophy%22+%2D+Day+2+%2D+Advent+of+Code+2020&url=https%3A%2F%2Fadventofcode%2Ecom%2F2020%2Fday%2F2&related=ericwastl&hashtags=AdventOfCode) [Mastodon](<javascript:void(0);>)\] this puzzle.

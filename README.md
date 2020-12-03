@@ -49,7 +49,7 @@ My attempt of solving [Advent of Code](https://adventofcode.com/) puzzles in Jav
 | [Day 6](2020/day/6)   |       |
 | [Day 5](2020/day/5)   |       |
 | [Day 4](2020/day/4)   |       |
-| [Day 3](2020/day/3)   |       |
+| [Day 3](2020/day/3)   | ⭐⭐  |
 | [Day 2](2020/day/2)   | ⭐⭐  |
 | [Day 1](2020/day/1)   | ⭐⭐  |
 

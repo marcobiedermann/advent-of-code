@@ -1,29 +1,53 @@
-/* eslint-disable import/prefer-default-export */
+function add(a: number, b: number): number {
+  return a + b;
+}
 
-function part1(opcodes: number[]): number[] {
+function multiply(a: number, b: number): number {
+  return a * b;
+}
+
+function part1(opcodes: number[], noun = 12, verb = 2): number {
   const codes = [...opcodes];
 
-  codes[1] = 12;
-  codes[2] = 2;
+  codes[1] = noun;
+  codes[2] = verb;
 
-  for (let i = 0; i < codes.length; i += 4) {
-    const opcode = codes[i];
-    const inputA = codes[codes[i + 1]];
-    const inputB = codes[codes[i + 2]];
-    const outputIndex = codes[i + 3];
+  let position = 0;
 
-    if (opcode === 1) {
-      codes[outputIndex] = inputA + inputB;
-    } else if (opcode === 2) {
-      codes[outputIndex] = inputA * inputB;
-    } else if (opcode === 99) {
-      break;
-    } else {
-      console.log('Invalid input');
+  while (codes[position] !== 99) {
+    const opCode = codes[position];
+    const inputAIndex = codes[position + 1];
+    const inputA = codes[inputAIndex];
+    const inputBIndex = codes[position + 2];
+    const inputB = codes[inputBIndex];
+    const outputIndex = codes[position + 3];
+
+    if (opCode === 1) {
+      codes[outputIndex] = add(inputA, inputB);
+    }
+
+    if (opCode === 2) {
+      codes[outputIndex] = multiply(inputA, inputB);
+    }
+
+    position += 4;
+  }
+
+  return codes[0];
+}
+
+function part2(opcodes: number[], target: number): number {
+  for (let noun = 0; noun < 100; noun += 1) {
+    for (let verb = 0; verb < 100; verb += 1) {
+      const result = part1(opcodes, noun, verb);
+
+      if (result === target) {
+        return 100 * noun + verb;
+      }
     }
   }
 
-  return codes;
+  return -1;
 }
 
-export { part1 };
+export { part1, part2 };

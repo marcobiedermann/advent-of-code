@@ -8,7 +8,6 @@
     "format": "prettier --write .",
     "lint:js": "eslint '**/*.{js,ts}'",
     "lint": "npm run lint:js",
-    "report-coverage": "codecov",
     "test": "jest"
   },
   "repository": {
@@ -35,7 +34,6 @@
     "@types/node": "^14.14.17",
     "@typescript-eslint/eslint-plugin": "^4.11.1",
     "@typescript-eslint/parser": "^4.11.1",
-    "codecov": "^3.8.1",
     "eslint": "^7.16.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^7.1.0",

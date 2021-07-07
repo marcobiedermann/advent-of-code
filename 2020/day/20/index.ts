@@ -469,11 +469,9 @@ function serializeGrid(grid) {
   return grid.map((row) => row.join('')).join('\n');
 }
 
-const SEAMONSTER = [
-  `                  # `,
-  `#    ##    ##    ###`,
-  ` #  #  #  #  #  #   `,
-].map((row) => row.split(''));
+const SEAMONSTER = [`                  # `, `#    ##    ##    ###`, ` #  #  #  #  #  #   `].map(
+  (row) => row.split(''),
+);
 
 function subGridMatch(grid, subgrid, row, col) {
   if (row + subgrid.length >= grid.length) {

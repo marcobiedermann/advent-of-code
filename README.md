@@ -4,7 +4,7 @@
 [![dependencies Status](https://img.shields.io/david/marcobiedermann/advent-of-code)](https://david-dm.org/marcobiedermann/advent-of-code)
 [![devDependencies Status](https://img.shields.io/david/dev/marcobiedermann/advent-of-code)](https://david-dm.org/marcobiedermann/advent-of-code?type=dev)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmarcobiedermann%2Fadvent-of-code.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmarcobiedermann%2Fadvent-of-code?ref=badge_shield)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/marcobiedermann/advent-of-code/Node.js%20CI)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/marcobiedermann/advent-of-code/CI)
 
 My attempt of solving [Advent of Code](https://adventofcode.com/) puzzles in JavaScript.
 

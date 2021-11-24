@@ -14,7 +14,7 @@ describe('Day 12', () => {
     });
   });
 
-  describe('Part 2', () => {
+  describe.skip('Part 2', () => {
     it('should', () => {
       expect.assertions(2);
 

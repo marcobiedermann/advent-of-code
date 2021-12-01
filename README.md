@@ -11,6 +11,7 @@ My attempt of solving [Advent of Code](https://adventofcode.com/) puzzles in Jav
 ## Table of Contents
 
 - [Events](#events)
+  - [2021](#2021)
   - [2020](#2020)
   - [2019](#2019)
   - [2018](#2018)
@@ -22,6 +23,12 @@ My attempt of solving [Advent of Code](https://adventofcode.com/) puzzles in Jav
 - [License](#license)
 
 ## Events
+
+### 2021
+
+| Day                   | Stars |
+| --------------------- | ----- |
+| [Day 1](2020/day/1)   | ⭐⭐  |
 
 ### 2020
 

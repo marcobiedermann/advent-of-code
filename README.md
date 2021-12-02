@@ -26,9 +26,10 @@ My attempt of solving [Advent of Code](https://adventofcode.com/) puzzles in Jav
 
 ### 2021
 
-| Day                   | Stars |
-| --------------------- | ----- |
-| [Day 1](2020/day/1)   | ⭐⭐  |
+| Day                 | Stars |
+| ------------------- | ----- |
+| [Day 2](2021/day/2) | ⭐⭐  |
+| [Day 1](2021/day/1) | ⭐⭐  |
 
 ### 2020
 

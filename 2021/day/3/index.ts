@@ -37,32 +37,23 @@ function part1(binaryNumbers: string[]): number {
   return gammaRate * epsilonRate;
 }
 
-function calculateRating(binaryNumbers: string[], isMost: boolean): string {
-  let filteredNumbers = [...binaryNumbers];
-
-  for (let i = 0; i < binaryNumbers[0].length; i += 1) {
-    const { zeros, ones } = countZerosAndOnes(filteredNumbers, i);
-
-    if (zeros > ones) {
-      filteredNumbers = filteredNumbers.filter(
-        (binaryNumber) => binaryNumber[i] === (isMost ? '0' : '1'),
-      );
-    } else {
-      filteredNumbers = filteredNumbers.filter(
-        (binaryNumber) => binaryNumber[i] === (isMost ? '1' : '0'),
-      );
-    }
-
-    if (filteredNumbers.length === 1) {
-      break;
-    }
+function calculateRating(numbers: string[], isMost = true, position = 0): string {
+  if (numbers.length === 1) {
+    return numbers[0];
   }
 
-  return filteredNumbers[0];
+  const { zeros, ones } = countZerosAndOnes(numbers, position);
+
+  const filteredNumbers =
+    zeros > ones
+      ? numbers.filter((number) => number[position] === (isMost ? '0' : '1'))
+      : numbers.filter((number) => number[position] === (isMost ? '1' : '0'));
+
+  return calculateRating(filteredNumbers, isMost, position + 1);
 }
 
 function part2(binaryNumbers: string[]): number {
-  const oxygenGeneratorRating = parseInt(calculateRating(binaryNumbers, true), 2);
+  const oxygenGeneratorRating = parseInt(calculateRating(binaryNumbers), 2);
   const co2ScrubberRating = parseInt(calculateRating(binaryNumbers, false), 2);
 
   return oxygenGeneratorRating * co2ScrubberRating;

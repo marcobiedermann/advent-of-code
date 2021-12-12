@@ -1,12 +1,18 @@
-/* eslint-disable import/prefer-default-export */
+function part1(strings: string[]): number {
+  const niceStrings = strings.filter(
+    (string) =>
+      /([aeiou].*?){3,}/.test(string) && /([a-z])\1/.test(string) && !/(ab|cd|pq|xy)/.test(string),
+  );
 
-function part1(input: string[]): number {
-  const niceWords = input
-    .filter((word) => /[aeiou].*?[aeiou].*?[aeiou]/.test(word))
-    .filter((word) => /(\w)\1/.test(word))
-    .filter((word) => !/(ab|cd|pq|xy)/.test(word));
-
-  return niceWords.length;
+  return niceStrings.length;
 }
 
-export { part1 };
+function part2(strings: string[]): number {
+  const niceStrings = strings.filter(
+    (string) => /([a-z][a-z]).*\1/.test(string) && /([a-z])\w\1/.test(string),
+  );
+
+  return niceStrings.length;
+}
+
+export { part1, part2 };

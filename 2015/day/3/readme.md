@@ -1,4 +1,4 @@
-## \--- Day 3: Perfectly Spherical Houses in a Vacuum ---
+## --- Day 3: Perfectly Spherical Houses in a Vacuum ---
 
 Santa is delivering presents to an infinite two-dimensional grid of houses.
 
@@ -14,9 +14,7 @@ For example:
 
 Your puzzle answer was `2081`.
 
-The first half of this puzzle is complete! It provides one gold star: \*
-
-## \--- Part Two ---
+## --- Part Two ---
 
 The next year, to speed up the process, Santa creates a robot version of himself, _Robo-Santa_, to deliver presents with him.
 
@@ -30,8 +28,12 @@ For example:
 - `^>v<` now delivers presents to `3` houses, and Santa and Robo-Santa end up back where they started.
 - `^v^v^v^v^v` now delivers presents to `11` houses, with Santa going one direction and Robo-Santa going the other.
 
-Although it hasn't changed, you can still [get your puzzle input](3/input).
+Your puzzle answer was `2341`.
 
-Answer:
+Both parts of this puzzle are complete! They provide two gold stars: \*\*
 
-You can also \[Shareon [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+Part+One+of+%22Perfectly+Spherical+Houses+in+a+Vacuum%22+%2D+Day+3+%2D+Advent+of+Code+2015&url=https%3A%2F%2Fadventofcode%2Ecom%2F2015%2Fday%2F3&related=ericwastl&hashtags=AdventOfCode) [Mastodon](<javascript:void(0);>)\] this puzzle.
+At this point, you should [return to your Advent calendar](/2015) and try another puzzle.
+
+If you still want to see it, you can [get your puzzle input](3/input).
+
+You can also [Share on [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+%22Perfectly+Spherical+Houses+in+a+Vacuum%22+%2D+Day+3+%2D+Advent+of+Code+2015&url=https%3A%2F%2Fadventofcode%2Ecom%2F2015%2Fday%2F3&related=ericwastl&hashtags=AdventOfCode) [Mastodon](<javascript:void(0);>)] this puzzle.

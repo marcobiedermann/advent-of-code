@@ -1,9 +1,9 @@
 import { readFileSync } from 'fs';
-import { part1 } from '.';
+import { part1, part2 } from '.';
 
 const input = readFileSync(`${__dirname}/input`, 'utf-8');
 
-describe('Day 3', () => {
+describe('2015 Day 3', () => {
   describe('Part 1', () => {
     it('should return number of unique locations visited', () => {
       expect.assertions(4);
@@ -12,6 +12,17 @@ describe('Day 3', () => {
       expect(part1('^>v<')).toStrictEqual(4);
       expect(part1('^v^v^v^v^v')).toStrictEqual(2);
       expect(part1(input)).toStrictEqual(2081);
+    });
+  });
+
+  describe('Part 2', () => {
+    it('should return number of unique locations visited by santa and robo-santa', () => {
+      expect.assertions(4);
+
+      expect(part2('^v')).toStrictEqual(3);
+      expect(part2('^>v<')).toStrictEqual(3);
+      expect(part2('^v^v^v^v^v')).toStrictEqual(11);
+      expect(part2(input)).toStrictEqual(2341);
     });
   });
 });

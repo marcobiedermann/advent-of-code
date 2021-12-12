@@ -1,4 +1,4 @@
-## \--- Day 5: Doesn't He Have Intern-Elves For This? ---
+## --- Day 5: Doesn't He Have Intern-Elves For This? ---
 
 Santa needs help figuring out which strings in his text file are naughty or nice.
 
@@ -20,9 +20,7 @@ How many strings are nice?
 
 Your puzzle answer was `255`.
 
-The first half of this puzzle is complete! It provides one gold star: \*
-
-## \--- Part Two ---
+## --- Part Two ---
 
 Realizing the error of his ways, Santa has switched to a better model of determining whether a string is naughty or nice. None of the old rules apply, as they are all clearly ridiculous.
 
@@ -40,8 +38,12 @@ For example:
 
 How many strings are nice under these new rules?
 
-Although it hasn't changed, you can still [get your puzzle input](5/input).
+Your puzzle answer was `55`.
 
-Answer:
+Both parts of this puzzle are complete! They provide two gold stars: \*\*
 
-You can also \[Shareon [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+Part+One+of+%22Doesn%27t+He+Have+Intern%2DElves+For+This%3F%22+%2D+Day+5+%2D+Advent+of+Code+2015&url=https%3A%2F%2Fadventofcode%2Ecom%2F2015%2Fday%2F5&related=ericwastl&hashtags=AdventOfCode) [Mastodon](<javascript:void(0);>)\] this puzzle.
+At this point, you should [return to your Advent calendar](/2015) and try another puzzle.
+
+If you still want to see it, you can [get your puzzle input](5/input).
+
+You can also [Share on [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+%22Doesn%27t+He+Have+Intern%2DElves+For+This%3F%22+%2D+Day+5+%2D+Advent+of+Code+2015&url=https%3A%2F%2Fadventofcode%2Ecom%2F2015%2Fday%2F5&related=ericwastl&hashtags=AdventOfCode) [Mastodon](<javascript:void(0);>)] this puzzle.

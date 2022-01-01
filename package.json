@@ -32,7 +32,7 @@
   "homepage": "https://github.com/marcobiedermann/advent-of-code#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.16.4",
-    "@babel/preset-typescript": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.7",
     "@types/jest": "^27.0.3",
     "@types/node": "^16.11.11",
     "@typescript-eslint/eslint-plugin": "^4.33.0",

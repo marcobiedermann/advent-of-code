@@ -1,17 +1,11 @@
-/* eslint-disable import/prefer-default-export */
+function getCode(
+  instructions: string[],
+  buttons: (string | undefined)[][],
+  start: [number, number],
+) {
+  const codes: (string | undefined)[] = [];
 
-const buttons = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
-];
-
-function part1(instructions: string[]): string {
-  const codes: number[] = [];
-
-  // start in the middle (`5`)
-  let x = Math.floor(buttons.length / 2);
-  let y = Math.floor(buttons.length / 2);
+  let [x, y] = start;
   let currentButton = buttons[y][x];
 
   instructions.forEach((instruction) => {
@@ -19,19 +13,27 @@ function part1(instructions: string[]): string {
 
     moves.forEach((move) => {
       if (move === 'U') {
-        y = Math.max(y - 1, 0);
+        const nextButton = buttons[y - 1]?.[x];
+
+        y = nextButton ? y - 1 : y;
       }
 
       if (move === 'R') {
-        x = Math.min(x + 1, buttons.length - 1);
+        const nextButton = buttons[y]?.[x + 1];
+
+        x = nextButton ? x + 1 : x;
       }
 
       if (move === 'D') {
-        y = Math.min(y + 1, buttons.length - 1);
+        const nextButton = buttons[y + 1]?.[x];
+
+        y = nextButton ? y + 1 : y;
       }
 
       if (move === 'L') {
-        x = Math.max(x - 1, 0);
+        const nextButton = buttons[y]?.[x - 1];
+
+        x = nextButton ? x - 1 : x;
       }
 
       currentButton = buttons[y][x];
@@ -43,4 +45,32 @@ function part1(instructions: string[]): string {
   return codes.join('');
 }
 
-export { part1 };
+function part1(instructions: string[]): string {
+  const buttons = [
+    ['1', '2', '3'],
+    ['4', '5', '6'],
+    ['7', '8', '9'],
+  ];
+
+  // start at `5`
+  const start: [number, number] = [1, 1];
+
+  return getCode(instructions, buttons, start);
+}
+
+function part2(instructions: string[]): string {
+  const buttons = [
+    [undefined, undefined, '1', undefined, undefined],
+    [undefined, '2', '3', '4', undefined],
+    ['5', '6', '7', '8', '9'],
+    [undefined, 'A', 'B', 'C', undefined],
+    [undefined, undefined, 'D', undefined, undefined],
+  ];
+
+  // start at `5`
+  const start: [number, number] = [0, 2];
+
+  return getCode(instructions, buttons, start);
+}
+
+export { part1, part2 };

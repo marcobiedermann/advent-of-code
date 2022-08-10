@@ -177,7 +177,7 @@ My attempt of solving [Advent of Code](https://adventofcode.com/) puzzles in Jav
 | [Day 7](2016/day/7)   |       |
 | [Day 6](2016/day/6)   |       |
 | [Day 5](2016/day/5)   |       |
-| [Day 4](2016/day/4)   |       |
+| [Day 4](2016/day/4)   | ⭐⭐  |
 | [Day 3](2016/day/3)   | ⭐    |
 | [Day 2](2016/day/2)   | ⭐⭐  |
 | [Day 1](2016/day/1)   | ⭐    |

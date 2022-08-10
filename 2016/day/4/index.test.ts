@@ -1,9 +1,9 @@
-import { readFileSync } from 'fs';
+import { readFileSync } from 'node:fs';
 import { part1, part2 } from '.';
 
 const input = readFileSync(`${__dirname}/input`, 'utf-8').split('\n');
 
-describe('2016 Day 3', () => {
+describe('2016 Day 4', () => {
   describe('Part 1', () => {
     it('should sum the sector IDs of real rooms', () => {
       expect.assertions(2);

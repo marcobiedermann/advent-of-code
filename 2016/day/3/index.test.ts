@@ -1,4 +1,4 @@
-import { readFileSync } from 'fs';
+import { readFileSync } from 'node:fs';
 import { part1, part2 } from '.';
 
 const input = readFileSync(`${__dirname}/input`, 'utf-8').split('\n');

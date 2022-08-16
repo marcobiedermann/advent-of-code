@@ -118,8 +118,8 @@ My attempt of solving [Advent of Code](https://adventofcode.com/) puzzles in Jav
 | [Day 6](2018/day/6)   |       |
 | [Day 5](2018/day/5)   |       |
 | [Day 4](2018/day/4)   |       |
-| [Day 3](2018/day/3)   |       |
-| [Day 2](2018/day/2)   |       |
+| [Day 3](2018/day/3)   | ⭐   |
+| [Day 2](2018/day/2)   | ⭐   |
 | [Day 1](2018/day/1)   | ⭐⭐  |
 
 ### 2017

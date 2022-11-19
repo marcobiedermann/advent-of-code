@@ -205,7 +205,7 @@ My attempt of solving [Advent of Code](https://adventofcode.com/) puzzles in Jav
 | [Day 9](2015/day/9)   | ⭐    |
 | [Day 8](2015/day/8)   | ⭐    |
 | [Day 7](2015/day/7)   |       |
-| [Day 6](2015/day/6)   | ⭐    |
+| [Day 6](2015/day/6)   | ⭐⭐  |
 | [Day 5](2015/day/5)   | ⭐⭐  |
 | [Day 4](2015/day/4)   | ⭐⭐  |
 | [Day 3](2015/day/3)   | ⭐⭐  |

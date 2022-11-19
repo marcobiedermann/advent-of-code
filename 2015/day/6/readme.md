@@ -1,6 +1,6 @@
-## \--- Day 6: Probably a Fire Hazard ---
+## --- Day 6: Probably a Fire Hazard ---
 
-Because your neighbors keep defeating you in the holiday house decorating contest year after year, you've decided to deploy one million lights in a 1000x1000 grid.
+Because your neighbors keep defeating you in the holiday house decorating contest year after year, you've decided to deploy one million lights in a <span title="Hey, be glad I'm not asking for the resistance between two points!">1000x1000 grid</span>.
 
 Furthermore, because you've been especially nice this year, Santa has mailed you instructions on how to display the ideal lighting configuration.
 
@@ -18,9 +18,7 @@ After following the instructions, _how many lights are lit_?
 
 Your puzzle answer was `377891`.
 
-The first half of this puzzle is complete! It provides one gold star: \*
-
-## \--- Part Two ---
+## --- Part Two ---
 
 You just finish implementing your winning light pattern when you realize you mistranslated Santa's message from Ancient Nordic Elvish.
 
@@ -39,8 +37,12 @@ For example:
 - `turn on 0,0 through 0,0` would increase the total brightness by `1`.
 - `toggle 0,0 through 999,999` would increase the total brightness by `2000000`.
 
-Although it hasn't changed, you can still [get your puzzle input](6/input).
+Your puzzle answer was `14110788`.
 
-Answer:
+Both parts of this puzzle are complete! They provide two gold stars: \*\*
 
-You can also \[Shareon [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+Part+One+of+%22Probably+a+Fire+Hazard%22+%2D+Day+6+%2D+Advent+of+Code+2015&url=https%3A%2F%2Fadventofcode%2Ecom%2F2015%2Fday%2F6&related=ericwastl&hashtags=AdventOfCode) [Mastodon](<javascript:void(0);>)\] this puzzle.
+At this point, you should [return to your Advent calendar](/2015) and try another puzzle.
+
+If you still want to see it, you can [get your puzzle input](6/input).
+
+You can also <span class="share">[Share<span class="share-content">on [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+%22Probably+a+Fire+Hazard%22+%2D+Day+6+%2D+Advent+of+Code+2015&url=https%3A%2F%2Fadventofcode%2Ecom%2F2015%2Fday%2F6&related=ericwastl&hashtags=AdventOfCode) [Mastodon](<javascript:void(0);>)</span>]</span> this puzzle.

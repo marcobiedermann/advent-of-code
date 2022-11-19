@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs';
-import { part1 } from '.';
+import { part1, part2 } from '.';
 
 const input = readFileSync(`${__dirname}/input`, 'utf-8').split('\n');
 
@@ -9,6 +9,14 @@ describe('Day 6', () => {
       expect.assertions(1);
 
       expect(part1(input)).toStrictEqual(377891);
+    });
+  });
+
+  describe('Part 2', () => {
+    it('should return the total brightness', () => {
+      expect.assertions(1);
+
+      expect(part2(input)).toStrictEqual(14110788);
     });
   });
 });

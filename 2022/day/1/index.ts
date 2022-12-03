@@ -1,19 +1,11 @@
-function add(a: number, b: number): number {
-  return a + b;
-}
-
-function subtract(a: number, b: number): number {
-  return a - b;
-}
-
-function sum(arr: number[]): number {
-  return arr.reduce(add, 0);
-}
+import sortBy from 'lodash/sortBy';
+import sum from 'lodash/sum';
+import takeRight from 'lodash/takeRight';
 
 function part1(elves: string[], totalElves = 1): number {
   const elvesCalories = elves.map((elf) => sum(elf.split('\n').map(Number)));
-  const sortedElves = elvesCalories.sort(subtract);
-  const topElves = sortedElves.slice(-totalElves);
+  const sortedElves = sortBy(elvesCalories);
+  const topElves = takeRight(sortedElves, totalElves);
   const total = sum(topElves);
 
   return total;

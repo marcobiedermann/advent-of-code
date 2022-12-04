@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "check": "tsc --noEmit",
-    "format": "prettier --ignore-path .gitignore --write .",
-    "lint:js": "eslint --ignore-path .gitignore '**/*.{js,ts}'",
+    "format": "prettier --cache --ignore-path .gitignore --write .",
+    "lint:js": "eslint --cache --ignore-path .gitignore .",
     "lint": "npm run lint:js",
     "test": "jest --maxWorkers=50% --watch",
     "test:ci": "jest --ci --coverage --runInBand"

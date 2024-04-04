@@ -1,8 +1,8 @@
-import { readFileSync } from 'node:fs';
+import { readFile } from 'node:fs/promises';
 import { describe, expect, it } from 'vitest';
 import { part1, part2 } from '.';
 
-const input = readFileSync(`${__dirname}/input`, 'utf-8').split('\n').map(Number);
+const input = (await readFile(`${__dirname}/input`, 'utf-8')).split('\n').map(Number);
 const sampleInput = [199, 200, 208, 210, 200, 207, 240, 269, 260, 263];
 
 describe('2021 Day 1', () => {

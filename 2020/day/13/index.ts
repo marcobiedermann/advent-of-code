@@ -1,6 +1,5 @@
-import { readFileSync } from 'node:fs';
 
-const input = readFileSync(`${__dirname}/input.example`, 'utf-8').split('\n');
+const input = await readFile(`${__dirname}/input.example`, 'utf-8').split('\n');
 
 function part1(notes: string[]) {
   const [first, second] = notes;

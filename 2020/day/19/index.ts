@@ -1,6 +1,5 @@
-import { readFileSync } from 'node:fs';
 
-const data = readFileSync(`${__dirname}/input`, 'utf-8');
+const data = await readFile(`${__dirname}/input`, 'utf-8');
 
 // const r = Object.fromEntries(rules.split('\n').map((rule) => rule.split(': ')));
 

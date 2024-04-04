@@ -1,8 +1,8 @@
-import { readFileSync } from 'node:fs';
+import { readFile } from 'node:fs/promises';
 import { describe, expect, it } from 'vitest';
 import { part1, part2 } from '.';
 
-const input = readFileSync(`${__dirname}/input`, 'utf-8').split('\n');
+const input = (await readFile(`${__dirname}/input`, 'utf-8')).split('\n');
 
 describe('Day 1', () => {
   describe('Part 1', () => {

@@ -1,6 +1,6 @@
-import { readFileSync } from 'node:fs';
+import { readFile } from "node:fs";
 
-const input = readFileSync(`${__dirname}/input`, 'utf-8').split('\n');
+const input = (await readFile(`${__dirname}/input`, 'utf-8')).split('\n');
 
 interface Food {
   allergens: string[];

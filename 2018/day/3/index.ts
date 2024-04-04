@@ -1,9 +1,5 @@
 /* eslint-disable import/prefer-default-export */
 
-import { readFileSync } from 'node:fs';
-
-const input = readFileSync(`${__dirname}/input`, 'utf-8').split('\n');
-
 interface Claim {
   id: string;
   x: number;

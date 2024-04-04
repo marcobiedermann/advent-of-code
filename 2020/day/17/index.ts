@@ -1,8 +1,7 @@
 // https://github.com/caderek/aoc2020/blob/main/src/day17/index.ts
 
-import { readFileSync } from 'node:fs';
 
-const input = readFileSync(`${__dirname}/input.example`, 'utf-8')
+const input = await readFile(`${__dirname}/input.example`, 'utf-8')
   .split('\n')
   .map((line) => line.split(''));
 

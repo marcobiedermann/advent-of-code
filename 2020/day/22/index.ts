@@ -1,6 +1,6 @@
-import { readFileSync } from 'node:fs';
+import { readFile } from "node:fs";
 
-const input = readFileSync(`${__dirname}/input`, 'utf-8').split('\n\n');
+const input = (await readFile(`${__dirname}/input`, 'utf-8')).split('\n\n');
 
 function calculateScore(scores: number[]): number {
   const { length } = scores;

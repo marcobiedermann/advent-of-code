@@ -1,6 +1,6 @@
-import { readFileSync } from 'node:fs';
+import { readFile } from "node:fs";
 
-const input = readFileSync(`${__dirname}/input`, 'utf-8').split('\n');
+const input = (await readFile(`${__dirname}/input`, 'utf-8')).split('\n');
 
 function parseExpression(expression: string): string {
   const { groups } = expression.match(/\((?<sub>[^()]+)\)/) || [];
@@ -29,9 +29,7 @@ evaluate('2 * 3 + (4 * 5)'); // ?
 // evaluate('5 + (8 * 3 + 9 + 3 * 4 * 3)') // ?
 
 function part1(lines: string[]): number {
-  return lines.reduce((accumulator, currentValue) => {
-    return accumulator + evaluate(currentValue);
-  }, 0);
+  return lines.reduce((accumulator, currentValue) => accumulator + evaluate(currentValue), 0);
 }
 
 // part1(input); // ?

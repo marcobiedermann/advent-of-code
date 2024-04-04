@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { part1, part2 } from '.';
 
 const input = '1113122113';

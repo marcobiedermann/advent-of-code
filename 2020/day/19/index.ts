@@ -1,4 +1,4 @@
-import { readFileSync } from 'fs';
+import { readFileSync } from 'node:fs';
 
 const data = readFileSync(`${__dirname}/input`, 'utf-8');
 

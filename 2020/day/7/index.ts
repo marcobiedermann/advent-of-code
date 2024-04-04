@@ -1,6 +1,6 @@
 // https://github.com/adriennetacke/advent-of-code-2020
 
-import { readFileSync } from 'fs';
+import { readFileSync } from 'node:fs';
 import { part2 } from '../../../2015/day/1';
 
 const input = readFileSync(`${__dirname}/input`, 'utf-8').split('\n');

@@ -1,4 +1,5 @@
 import { readFileSync } from 'node:fs';
+import { describe, expect, it } from 'vitest';
 import { part1, part2 } from '.';
 
 const sample = readFileSync(`${__dirname}/input.sample`, 'utf-8').split('\n');

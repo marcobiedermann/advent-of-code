@@ -1,5 +1,6 @@
-import { readFileSync } from 'fs';
-import { part1, part2, Slope } from '.';
+import { readFileSync } from 'node:fs';
+import { describe, expect, it } from 'vitest';
+import { Slope, part1, part2 } from '.';
 
 const exampleInput = `..##.........##.........##.........##.........##.........##.......
 #...#...#..#...#...#..#...#...#..#...#...#..#...#...#..#...#...#..

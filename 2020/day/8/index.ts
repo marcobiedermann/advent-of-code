@@ -1,7 +1,7 @@
 // https://www.reddit.com/r/adventofcode/comments/k8xw8h/2020_day_08_solutions/
 // https://pastebin.com/QYWyuynD
 
-import { readFileSync } from 'fs';
+import { readFileSync } from 'node:fs';
 
 const input = readFileSync(`${__dirname}/input.example`, 'utf-8').split('\n');
 

@@ -1,82 +1,66 @@
-const directions = new Map<string, [number, number]>([
+type Direction = '^' | '<' | '>' | 'v';
+type Move = [number, number];
+
+const moves = new Map<Direction, Move>([
   ['^', [0, 1]],
-  ['v', [0, -1]],
   ['<', [-1, 0]],
   ['>', [1, 0]],
+  ['v', [0, -1]],
 ]);
+const fallbackMove = [0, 0] as const;
+const startLocation: Move = [0, 0];
 
-function parseMoves(moves: string): string[] {
-  return moves.split('');
-}
+function part1(presents: string): number {
+  let santaLocation: Move = startLocation;
 
-function part1(moves: string): number {
-  const parsedMoves = parseMoves(moves);
-  const start = [0, 0];
-  const set = new Set();
+  const houses = new Set([JSON.stringify(startLocation)]);
 
-  set.add(start.join(','));
+  for (let i = 0; i < presents.length; i += 1) {
+    const present = presents[i] as Direction;
+    const move = moves.get(present) || fallbackMove;
+    const newSantaLocation: Move = [santaLocation[0] + move[0], santaLocation[1] + move[1]];
 
-  parsedMoves.reduce((position, move) => {
-    const direction = directions.get(move) || [0, 0];
-    const newPosition = [position[0] + direction[0], position[1] + direction[1]];
+    houses.add(JSON.stringify(newSantaLocation));
 
-    set.add(newPosition.join(','));
+    santaLocation = newSantaLocation;
+  }
 
-    return newPosition;
-  }, start);
-
-  return set.size;
+  return houses.size;
 }
 
 function isEven(n: number): boolean {
   return n % 2 === 0;
 }
 
-function part2(moves: string): number {
-  const parsedMoves = parseMoves(moves);
-  const set = new Set();
+function part2(presents: string): number {
+  let santaLocation: Move = startLocation;
+  let roboSantaLocation: Move = startLocation;
 
-  const start = [0, 0];
+  const houses = new Set([JSON.stringify(startLocation)]);
 
-  set.add(start.join(','));
+  for (let i = 0; i < presents.length; i += 1) {
+    const present = presents[i] as Direction;
+    const move = moves.get(present) || fallbackMove;
 
-  parsedMoves.reduce(
-    (positions, move, index) => {
-      const direction = directions.get(move) || [0, 0];
+    if (isEven(i)) {
+      const newSantaLocation: Move = [santaLocation[0] + move[0], santaLocation[1] + move[1]];
 
-      if (isEven(index)) {
-        const newSantaPosition = [
-          positions.santa[0] + direction[0],
-          positions.santa[1] + direction[1],
-        ];
+      houses.add(JSON.stringify(newSantaLocation));
 
-        set.add(newSantaPosition.join(','));
-
-        return {
-          ...positions,
-          santa: newSantaPosition,
-        };
-      }
-
-      const newRobotPosition = [
-        positions.robot[0] + direction[0],
-        positions.robot[1] + direction[1],
+      santaLocation = newSantaLocation;
+    } else {
+      const newRoboSantaLocation: Move = [
+        roboSantaLocation[0] + move[0],
+        roboSantaLocation[1] + move[1],
       ];
 
-      set.add(newRobotPosition.join(','));
+      houses.add(JSON.stringify(newRoboSantaLocation));
 
-      return {
-        ...positions,
-        robot: newRobotPosition,
-      };
-    },
-    {
-      santa: start,
-      robot: start,
-    },
-  );
+      roboSantaLocation = newRoboSantaLocation;
+    }
+  }
 
-  return set.size;
+  return houses.size;
 }
 
 export { part1, part2 };

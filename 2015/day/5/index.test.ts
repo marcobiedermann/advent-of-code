@@ -1,8 +1,9 @@
-import { readFile } from 'node:fs/promises';
 import { describe, expect, it } from 'vitest';
 import { part1, part2 } from '.';
+import { getInput } from '../../../utils/file';
+import { NEWLINE } from '../../../utils/string';
 
-const input = (await readFile(`${__dirname}/input`, 'utf-8')).split('\n');
+const input = (await getInput(__dirname)).split(NEWLINE);
 
 describe('2015', () => {
   describe('Day 5', () => {

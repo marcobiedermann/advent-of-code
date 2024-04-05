@@ -1,12 +1,4 @@
-const RADIX = 10;
-
-function add(a: number, b: number): number {
-  return a + b;
-}
-
-function sum(arr: number[]): number {
-  return arr.reduce(add, 0);
-}
+import { RADIX, sum } from '../../../utils/math';
 
 function getArea(length: number, width: number): number {
   return length * width;

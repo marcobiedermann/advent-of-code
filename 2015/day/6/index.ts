@@ -1,62 +1,63 @@
+import { RADIX, sum } from '../../../utils/math';
+
+const BASE = 1000;
+
+type Command = 'turn on' | 'turn off' | 'toggle';
+
+interface Position {
+  x: number;
+  y: number;
+}
+
 interface Instruction {
-  command: string;
-  x1: number;
-  x2: number;
-  y1: number;
-  y2: number;
+  command: Command;
+  start: Position;
+  end: Position;
+}
+
+function getIndex(x: number, y: number): number {
+  return BASE * x + y;
 }
 
 function parseInstruction(instruction: string): Instruction {
-  const { groups } =
-    instruction.match(
-      /(?<command>turn on|turn off|toggle) (?<x1>\d+),(?<y1>\d+) through (?<x2>\d+),(?<y2>\d+)/,
-    ) || [];
-
-  if (!groups) {
-    return {
-      command: 'Unknown command',
-      x1: 0,
-      x2: 0,
-      y1: 0,
-      y2: 0,
-    };
-  }
-
+  const { groups } = instruction.match(
+    /(?<command>turn on|turn off|toggle) (?<x1>\d+),(?<y1>\d+) through (?<x2>\d+),(?<y2>\d+)/,
+  );
   const { command, x1, x2, y1, y2 } = groups;
 
   return {
     command,
-    x1: parseInt(x1, 10),
-    x2: parseInt(x2, 10),
-    y1: parseInt(y1, 10),
-    y2: parseInt(y2, 10),
+    start: {
+      x: parseInt(x1, RADIX),
+      y: parseInt(y1, RADIX),
+    },
+    end: {
+      x: parseInt(x2, RADIX),
+      y: parseInt(y2, RADIX),
+    },
   };
 }
 
 function part1(instructions: string[]): number {
-  const base = 1000;
-  const lights = new Uint8Array(base ** 2);
+  const grid = new Array(BASE ** 2).fill(false);
 
   instructions.forEach((instruction) => {
-    const { command, x1, x2, y1, y2 } = parseInstruction(instruction);
+    const { command, start, end } = parseInstruction(instruction);
 
-    for (let x = x1; x <= x2; x += 1) {
-      for (let y = y1; y <= y2; y += 1) {
-        const index = base * x + y;
+    for (let { x } = start; x <= end.x; x += 1) {
+      for (let { y } = start; y <= end.y; y += 1) {
+        const index = getIndex(x, y);
 
         switch (command) {
           case 'turn on':
-            lights[index] = 1;
+            grid[index] = true;
             break;
-
           case 'turn off':
-            lights[index] = 0;
+            grid[index] = false;
             break;
-
           case 'toggle':
-            lights[index] = lights[index] === 0 ? 1 : 0;
+            grid[index] = !grid[index];
             break;
-
           default:
             break;
         }
@@ -64,43 +65,29 @@ function part1(instructions: string[]): number {
     }
   });
 
-  const result = lights.filter(Boolean);
-
-  return result.length;
-}
-
-function add(a: number, b: number): number {
-  return a + b;
-}
-
-function sum(arr: Uint8Array): number {
-  return arr.reduce(add, 0);
+  return grid.filter(Boolean).length;
 }
 
 function part2(instructions: string[]): number {
-  const base = 1000;
-  const lights = new Uint8Array(base ** 2);
+  const grid = new Array(BASE ** 2).fill(0);
 
   instructions.forEach((instruction) => {
-    const { command, x1, x2, y1, y2 } = parseInstruction(instruction);
+    const { command, start, end } = parseInstruction(instruction);
 
-    for (let x = x1; x <= x2; x += 1) {
-      for (let y = y1; y <= y2; y += 1) {
-        const index = base * x + y;
+    for (let { x } = start; x <= end.x; x += 1) {
+      for (let { y } = start; y <= end.y; y += 1) {
+        const index = getIndex(x, y);
 
         switch (command) {
           case 'turn on':
-            lights[index] += 1;
+            grid[index] += 1;
             break;
-
           case 'turn off':
-            lights[index] = Math.max(lights[index] - 1, 0);
+            grid[index] = Math.max(grid[index] - 1, 0);
             break;
-
           case 'toggle':
-            lights[index] += 2;
+            grid[index] += 2;
             break;
-
           default:
             break;
         }
@@ -108,7 +95,7 @@ function part2(instructions: string[]): number {
     }
   });
 
-  return sum(lights);
+  return sum(grid);
 }
 
 export { part1, part2 };

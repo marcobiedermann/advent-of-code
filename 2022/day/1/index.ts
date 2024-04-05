@@ -1,6 +1,4 @@
-import sortBy from 'lodash/sortBy';
-import sum from 'lodash/sum';
-import takeRight from 'lodash/takeRight';
+import { sortBy, sum, takeRight } from 'lodash-es';
 
 function part1(elves: string[], totalElves = 1): number {
   const elvesCalories = elves.map((elf) => sum(elf.split('\n').map(Number)));

@@ -7,7 +7,6 @@
     "check": "tsc --noEmit",
     "format": "prettier --cache --ignore-path .gitignore --write .",
     "lint:js": "eslint --cache --ignore-path .gitignore .",
-    "lint": "npm run lint:js",
     "test": "vitest",
     "test:ci": "vitest run --coverage"
   },

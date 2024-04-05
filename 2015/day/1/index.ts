@@ -1,8 +1,17 @@
+type Parenthesis = '(' | ')';
+const OPEN_PARENTHESIS = '(' as const;
+
+function isOpenParenthesis(parenthesis: string): boolean {
+  return parenthesis === OPEN_PARENTHESIS;
+}
+
 function part1(input: string): number {
   let floor = 0;
 
   for (let i = 0; i < input.length; i += 1) {
-    if (input[i] === '(') {
+    const parenthesis = input[i] as Parenthesis;
+
+    if (isOpenParenthesis(parenthesis)) {
       floor += 1;
     } else {
       floor -= 1;
@@ -16,7 +25,9 @@ function part2(input: string): number {
   let floor = 0;
 
   for (let i = 0; i < input.length; i += 1) {
-    if (input[i] === '(') {
+    const parenthesis = input[i] as Parenthesis;
+
+    if (isOpenParenthesis(parenthesis)) {
       floor += 1;
     } else {
       floor -= 1;

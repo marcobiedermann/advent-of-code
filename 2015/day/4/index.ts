@@ -1,13 +1,19 @@
-import crypto from 'crypto';
+import crypto from 'node:crypto';
+
+const ZERO = '0' as const;
+
+function getMd5Hash(input: string): string {
+  return crypto.createHash('md5').update(input).digest('hex');
+}
 
 function part1(key: string, digits = 5): number {
+  const str = ZERO.repeat(digits);
   let index = 1;
 
   while (true) {
-    const input = `${key}${index}`;
-    const hash = crypto.createHash('md5').update(input).digest('hex');
+    const hash = getMd5Hash(`${key}${index}`);
 
-    if (hash.slice(0, digits) === '0'.repeat(digits)) {
+    if (hash.startsWith(str)) {
       return index;
     }
 

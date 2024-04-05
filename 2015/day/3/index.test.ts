@@ -4,26 +4,24 @@ import { part1, part2 } from '.';
 
 const input = await readFile(`${__dirname}/input`, 'utf-8');
 
-describe('2015 Day 3', () => {
-  describe('Part 1', () => {
-    it('should return number of unique locations visited', () => {
-      expect.assertions(4);
-
-      expect(part1('>')).toStrictEqual(2);
-      expect(part1('^>v<')).toStrictEqual(4);
-      expect(part1('^v^v^v^v^v')).toStrictEqual(2);
-      expect(part1(input)).toStrictEqual(2081);
+describe('2015', () => {
+  describe('Day 3', () => {
+    describe('Part 1', () => {
+      it('should return number of unique locations visited', () => {
+        expect(part1('>')).toBe(2);
+        expect(part1('^>v<')).toBe(4);
+        expect(part1('^v^v^v^v^v')).toBe(2);
+        expect(part1(input)).toBe(2081);
+      });
     });
-  });
 
-  describe('Part 2', () => {
-    it('should return number of unique locations visited by santa and robo-santa', () => {
-      expect.assertions(4);
-
-      expect(part2('^v')).toStrictEqual(3);
-      expect(part2('^>v<')).toStrictEqual(3);
-      expect(part2('^v^v^v^v^v')).toStrictEqual(11);
-      expect(part2(input)).toStrictEqual(2341);
+    describe('Part 2', () => {
+      it('should return number of unique locations visited by santa and robo-santa', () => {
+        expect(part2('^v')).toBe(3);
+        expect(part2('^>v<')).toBe(3);
+        expect(part2('^v^v^v^v^v')).toBe(11);
+        expect(part2(input)).toBe(2341);
+      });
     });
   });
 });

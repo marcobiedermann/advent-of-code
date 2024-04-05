@@ -1,18 +1,38 @@
-function part1(strings: string[]): number {
-  const niceStrings = strings.filter(
-    (string) =>
-      /([aeiou].*?){3,}/.test(string) && /([a-z])\1/.test(string) && !/(ab|cd|pq|xy)/.test(string),
-  );
+function containsAtLeastThreeVowels(str: string): boolean {
+  return /([aeiou].*?){3,}/.test(str);
+}
 
-  return niceStrings.length;
+function containsAtLeastOneRepetitiveLetter(str: string): boolean {
+  return /([a-z])\1/.test(str);
+}
+
+function containingStrings(str: string): boolean {
+  return /(ab|cd|pq|xy)/.test(str);
+}
+
+function containsAtLeastTwoTwoLettersWithoutOverlap(str: string): boolean {
+  return /([a-z][a-z]).*\1/.test(str);
+}
+
+function containsAtLeastOneRepetitiveLetterWithLetterInBetween(str: string): boolean {
+  return /([a-z])[a-z]\1/.test(str);
+}
+
+function part1(strings: string[]): number {
+  return strings.filter(
+    (string) =>
+      containsAtLeastThreeVowels(string) &&
+      containsAtLeastOneRepetitiveLetter(string) &&
+      !containingStrings(string),
+  ).length;
 }
 
 function part2(strings: string[]): number {
-  const niceStrings = strings.filter(
-    (string) => /([a-z][a-z]).*\1/.test(string) && /([a-z])\w\1/.test(string),
-  );
-
-  return niceStrings.length;
+  return strings.filter(
+    (string) =>
+      containsAtLeastTwoTwoLettersWithoutOverlap(string) &&
+      containsAtLeastOneRepetitiveLetterWithLetterInBetween(string),
+  ).length;
 }
 
 export { part1, part2 };

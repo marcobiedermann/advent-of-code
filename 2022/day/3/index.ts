@@ -1,5 +1,4 @@
-import chunk from 'lodash/chunk';
-import sum from 'lodash/sum';
+import { chunk, sum } from 'lodash-es';
 
 function isLowerCase(character: string): boolean {
   return character.toLocaleLowerCase() === character;

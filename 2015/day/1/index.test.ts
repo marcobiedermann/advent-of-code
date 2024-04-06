@@ -4,36 +4,29 @@ import { getInput } from '../../../utils/file';
 
 const input = await getInput(__dirname);
 
-describe('Day 1', () => {
-  describe('Part 1', () => {
-    it('should return floor number', () => {
-      expect.assertions(10);
-
-      expect(part1('(())')).toStrictEqual(0);
-      expect(part1('()()')).toStrictEqual(0);
-
-      expect(part1('(((')).toStrictEqual(3);
-      expect(part1('(()(()(')).toStrictEqual(3);
-
-      expect(part1('))(((((')).toStrictEqual(3);
-
-      expect(part1('())')).toStrictEqual(-1);
-      expect(part1('))(')).toStrictEqual(-1);
-
-      expect(part1(')))')).toStrictEqual(-3);
-      expect(part1(')())())')).toStrictEqual(-3);
-
-      expect(part1(input)).toStrictEqual(280);
+describe('2015', () => {
+  describe('Day 1', () => {
+    describe('Part 1', () => {
+      it('should return floor number', () => {
+        expect(part1('(())')).toBe(0);
+        expect(part1('()()')).toBe(0);
+        expect(part1('(((')).toBe(3);
+        expect(part1('(()(()(')).toBe(3);
+        expect(part1('))(((((')).toBe(3);
+        expect(part1('())')).toBe(-1);
+        expect(part1('))(')).toBe(-1);
+        expect(part1(')))')).toBe(-3);
+        expect(part1(')())())')).toBe(-3);
+        expect(part1(input)).toBe(280);
+      });
     });
-  });
 
-  describe('Part 2', () => {
-    it('should return index of the first character to enter the basement', () => {
-      expect.assertions(3);
-
-      expect(part2(')')).toStrictEqual(1);
-      expect(part2('()())')).toStrictEqual(5);
-      expect(part2(input)).toStrictEqual(1797);
+    describe('Part 2', () => {
+      it('should return index of the first character to enter the basement', () => {
+        expect(part2(')')).toBe(1);
+        expect(part2('()())')).toBe(5);
+        expect(part2(input)).toBe(1797);
+      });
     });
   });
 });

@@ -1,5 +1,28 @@
 /* eslint-disable import/prefer-default-export, no-eval */
 
+import { RADIX } from '../../../utils/math';
+
+function permutater<T>(arr: T[]) {
+  const result: T[][] = [];
+
+  function permute(accumulator: T[], memo: T[] = []) {
+    if (!accumulator.length) {
+      result.push(memo);
+    } else {
+      for (let i = 0; i < accumulator.length; i += 1) {
+        const current = accumulator.slice();
+        const next = current.splice(i, 1);
+
+        permute(current.slice(), memo.concat(next));
+      }
+    }
+  }
+
+  permute(arr);
+
+  return result;
+}
+
 interface Route {
   from: string;
   to: string;
@@ -7,33 +30,14 @@ interface Route {
 }
 
 function parseRoute(route: string): Route {
-  const { groups } = route.match(/(?<from>\w+) to (?<to>\w+) = (?<distance>\d+)/) || [];
-
-  if (!groups) {
-    throw new Error('Invalid input');
-  }
-
+  const { groups } = route.match(/(?<from>\w+) to (?<to>\w+) = (?<distance>\d+)/);
   const { from, to, distance } = groups;
 
   return {
     from,
     to,
-    distance: parseInt(distance, 10),
+    distance: parseInt(distance, RADIX),
   };
-}
-
-function permute<T>(a: T[]): T[][] {
-  if (!a.length) {
-    return [a];
-  }
-
-  return a.reduce(
-    (accumulator: T[][], currentValue, index) => [
-      ...accumulator,
-      ...permute([...a.slice(0, index), ...a.slice(index + 1)]).map((x) => [currentValue, ...x]),
-    ],
-    [],
-  );
 }
 
 function mapRoutes(routes: string[], distances: Map<string, number>): number {
@@ -63,7 +67,7 @@ function part1(routes: string[]): number {
     places.add(to);
   });
 
-  const allRoutes = permute(Array.from(places));
+  const allRoutes = permutater(Array.from(places));
   const mappedRoutes = allRoutes.map((allRoute) => mapRoutes(allRoute, distances));
 
   return Math.min(...mappedRoutes);

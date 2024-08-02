@@ -1,4 +1,4 @@
-import { readFile } from "node:fs";
+import { readFile } from 'node:fs';
 
 const input = (await readFile(`${__dirname}/input`, 'utf-8')).split('\n');
 

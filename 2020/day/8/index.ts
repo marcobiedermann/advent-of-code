@@ -1,7 +1,6 @@
 // https://www.reddit.com/r/adventofcode/comments/k8xw8h/2020_day_08_solutions/
 // https://pastebin.com/QYWyuynD
 
-
 const input = await readFile(`${__dirname}/input.example`, 'utf-8').split('\n');
 
 interface Instruction {

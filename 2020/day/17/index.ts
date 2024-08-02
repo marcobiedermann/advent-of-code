@@ -1,6 +1,5 @@
 // https://github.com/caderek/aoc2020/blob/main/src/day17/index.ts
 
-
 const input = await readFile(`${__dirname}/input.example`, 'utf-8')
   .split('\n')
   .map((line) => line.split(''));

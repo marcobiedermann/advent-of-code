@@ -1,4 +1,3 @@
-
 const input = await readFile(`${__dirname}/input.example`, 'utf-8').split('\n');
 
 function parseMask(line: string) {

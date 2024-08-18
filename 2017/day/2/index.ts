@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 function part1(rows: number[][]): number {
   return rows.reduce((accumulator, currentValue) => {
     const min = Math.min(...currentValue);

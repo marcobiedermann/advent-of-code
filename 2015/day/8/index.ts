@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export, no-eval */
-
 import { sum } from '../../../utils/math';
 
 function mapString(str: string): number {

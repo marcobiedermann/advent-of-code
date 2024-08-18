@@ -1,7 +1,8 @@
 type Parenthesis = '(' | ')';
 const OPEN_PARENTHESIS = '(' as const;
+type OpenParenthesis = typeof OPEN_PARENTHESIS;
 
-function isOpenParenthesis(parenthesis: string): boolean {
+function isOpenParenthesis(parenthesis: string): parenthesis is OpenParenthesis {
   return parenthesis === OPEN_PARENTHESIS;
 }
 

@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 interface Signature {
   [key: string]: number;
 }

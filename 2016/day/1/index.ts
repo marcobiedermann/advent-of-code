@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 function manhattanDistance(x1: number, x2: number, y1: number, y2: number): number {
   return Math.abs(x1 - x2) + Math.abs(y1 - y2);
 }
@@ -26,7 +24,6 @@ function part1(instructions: string[]): number {
       currentDirection += 1;
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const direction = directions.at(currentDirection % directions.length)!;
     const newX = direction[0] * blocks;
     const newY = direction[1] * blocks;

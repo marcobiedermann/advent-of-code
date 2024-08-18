@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export, no-eval */
-
 import { RADIX } from '../../../utils/math';
 
 function permutater<T>(arr: T[]) {

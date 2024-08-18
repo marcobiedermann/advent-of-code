@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 function peek<T>(stack: T[]): T {
   return stack[stack.length - 1];
 }

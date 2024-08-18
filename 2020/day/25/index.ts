@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 function part1(input: number[]): number {
   const [cardPublicKey, doorPublicKey] = input;
 

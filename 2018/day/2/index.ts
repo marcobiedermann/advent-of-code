@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 function part1(boxes: string[]): number {
   let twoLetters = 0;
   let threeLetters = 0;

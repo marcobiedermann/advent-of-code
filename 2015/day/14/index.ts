@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 const TIME = 2503;
 
 function getDistance(speed: number, time: number, rest: number): number {

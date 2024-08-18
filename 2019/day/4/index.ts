@@ -39,7 +39,7 @@ function countLetters(input: string): Map<string, number> {
 }
 
 function find(map: Map<string, number>): boolean {
-  return !![...map].find(([_key, value]) => {
+  return !![...map].find(([, value]) => {
     return value === 2;
   });
 }

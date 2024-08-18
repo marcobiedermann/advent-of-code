@@ -1,8 +1,8 @@
 ## --- Day 2: Inventory Management System ---
 
-You stop falling through time, catch your breath, and check the screen on the device. "Destination reached. Current Year: 1518\. Current Location: North Pole Utility Closet 83N10." You made it! Now, to find those anomalies.
+You stop falling through time, catch your breath, and check the screen on the device. "Destination reached. Current Year: 1518. Current Location: North Pole Utility Closet 83N10." You made it! Now, to find those anomalies.
 
-Outside the utility closet, you hear footsteps and a voice. "...I'm not sure either. But now that <span title="This is, in fact, roughly when chimneys became common in houses.">so many people have chimneys</span>, maybe he could sneak in that way?" Another voice responds, "Actually, we've been working on a new kind of _suit_ that would let him fit through tight spaces like that. But, I heard that a few days ago, they lost the prototype fabric, the design plans, everything! Nobody on the team can even seem to remember important details of the project!"
+Outside the utility closet, you hear footsteps and a voice. "...I'm not sure either. But now that so many people have chimneys, maybe he could sneak in that way?" Another voice responds, "Actually, we've been working on a new kind of _suit_ that would let him fit through tight spaces like that. But, I heard that a few days ago, they lost the prototype fabric, the design plans, everything! Nobody on the team can even seem to remember important details of the project!"
 
 "Wouldn't they have had enough fabric to fill several boxes in the warehouse? They'd be stored together, so the box IDs should be similar. Too bad it would take forever to search the warehouse for _two similar box IDs_..." They walk too far away to hear any more.
 
@@ -27,3 +27,23 @@ _What is the checksum_ for your list of box IDs?
 Your puzzle answer was `5727`.
 
 The first half of this puzzle is complete! It provides one gold star: \*
+
+## --- Part Two ---
+
+Confident that your list of box IDs is complete, you're ready to find the boxes full of prototype fabric.
+
+The boxes will have IDs which differ by exactly one character at the same position in both strings. For example, given the following box IDs:
+
+    abcde
+    fghij
+    klmno
+    pqrst
+    fguij
+    axcye
+    wvxyz
+
+The IDs `abcde` and `axcye` are close, but they differ by two characters (the second and fourth). However, the IDs `fghij` and `fguij` differ by exactly one character, the third (`h` and `u`). Those must be the correct boxes.
+
+_What letters are common between the two correct box IDs?_ (In the example above, this is found by removing the differing character from either ID, producing `fgij`.)
+
+Answer:

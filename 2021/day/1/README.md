@@ -85,9 +85,3 @@ Consider sums of a three-measurement sliding window. _How many sums are larger t
 Your puzzle answer was `1805`.
 
 Both parts of this puzzle are complete! They provide two gold stars: \*\*
-
-At this point, you should [return to your Advent calendar](/2021) and try another puzzle.
-
-If you still want to see it, you can [get your puzzle input](1/input).
-
-You can also [Share on [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+%22Sonar+Sweep%22+%2D+Day+1+%2D+Advent+of+Code+2021&url=https%3A%2F%2Fadventofcode%2Ecom%2F2021%2Fday%2F1&related=ericwastl&hashtags=AdventOfCode) [Mastodon](<javascript:void(0);>)] this puzzle.

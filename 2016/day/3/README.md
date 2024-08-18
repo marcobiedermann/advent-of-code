@@ -6,7 +6,7 @@ Or are they?
 
 The design document gives the side lengths of each triangle it describes, but... `5 10 25`? Some of these aren't triangles. You can't help but mark the impossible ones.
 
-In a valid triangle, the sum of any two sides must be larger than the remaining side. For example, the "triangle" given above is <span title="Unless it's on a sphere!">impossible</span>, because `5 + 10` is not larger than `25`.
+In a valid triangle, the sum of any two sides must be larger than the remaining side. For example, the "triangle" given above is impossible, because `5 + 10` is not larger than `25`.
 
 In your puzzle input, _how many_ of the listed triangles are _possible_?
 
@@ -30,9 +30,3 @@ In your puzzle input, and instead reading by columns, _how many_ of the listed t
 Your puzzle answer was `1836`.
 
 Both parts of this puzzle are complete! They provide two gold stars: \*\*
-
-At this point, you should [return to your Advent calendar](/2016) and try another puzzle.
-
-If you still want to see it, you can [get your puzzle input](3/input).
-
-You can also [Share on [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+%22Squares+With+Three+Sides%22+%2D+Day+3+%2D+Advent+of+Code+2016&url=https%3A%2F%2Fadventofcode%2Ecom%2F2016%2Fday%2F3&related=ericwastl&hashtags=AdventOfCode) [Mastodon](<javascript:void(0);>)] this puzzle.

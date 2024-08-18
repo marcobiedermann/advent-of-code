@@ -6,7 +6,7 @@ As you move through the dense undergrowth, one of the Elves gives you a handheld
 
 However, because he's heard you have [significant](/2016/day/6) [experience](/2016/day/25) [dealing](/2019/day/7) [with](/2019/day/9) [signal-based](/2019/day/16) [systems](/2021/day/25), he convinced the other Elves that it would be okay to give you their one malfunctioning device - surely you'll have no problem fixing it.
 
-As if inspired by comedic timing, the device emits a few <span title="The magic smoke, on the other hand, seems to be contained... FOR NOW!">colorful sparks</span>.
+As if inspired by comedic timing, the device emits a few colorful sparks.
 
 To be able to communicate with the Elves, the device needs to _lock on to their signal_. The signal is a series of seemingly-random characters that the device receives one at a time.
 
@@ -52,9 +52,3 @@ _How many characters need to be processed before the first start-of-message mark
 Your puzzle answer was `2789`.
 
 Both parts of this puzzle are complete! They provide two gold stars: \*\*
-
-At this point, you should [return to your Advent calendar](/2022) and try another puzzle.
-
-If you still want to see it, you can [get your puzzle input](6/input).
-
-You can also <span class="share">[Share<span class="share-content">on [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+%22Tuning+Trouble%22+%2D+Day+6+%2D+Advent+of+Code+2022&url=https%3A%2F%2Fadventofcode%2Ecom%2F2022%2Fday%2F6&related=ericwastl&hashtags=AdventOfCode) [Mastodon](<javascript:void(0);>)</span>]</span> this puzzle.

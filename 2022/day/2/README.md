@@ -6,7 +6,7 @@ Rock Paper Scissors is a game between two players. Each game contains many round
 
 Appreciative of your help yesterday, one Elf gives you an _encrypted strategy guide_ (your puzzle input) that they say will be sure to help you win. "The first column is what your opponent is going to play: `A` for Rock, `B` for Paper, and `C` for Scissors. The second column--" Suddenly, the Elf is called away to help with someone's tent.
 
-The second column, <span title="Why do you keep guessing?!">you reason</span>, must be what you should play in response: `X` for Rock, `Y` for Paper, and `Z` for Scissors. Winning every time would be suspicious, so the responses must have been carefully chosen.
+The second column, you reason, must be what you should play in response: `X` for Rock, `Y` for Paper, and `Z` for Scissors. Winning every time would be suspicious, so the responses must have been carefully chosen.
 
 The winner of the whole tournament is the player with the highest score. Your _total score_ is the sum of your scores for each round. The score for a single round is the score for the _shape you selected_ (1 for Rock, 2 for Paper, and 3 for Scissors) plus the score for the _outcome of the round_ (0 if you lost, 3 if the round was a draw, and 6 if you won).
 
@@ -47,9 +47,3 @@ Following the Elf's instructions for the second column, _what would your total s
 Your puzzle answer was `15442`.
 
 Both parts of this puzzle are complete! They provide two gold stars: \*\*
-
-At this point, you should [return to your Advent calendar](/2022) and try another puzzle.
-
-If you still want to see it, you can [get your puzzle input](2/input).
-
-You can also <span class="share">[Share<span class="share-content">on [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+%22Rock+Paper+Scissors%22+%2D+Day+2+%2D+Advent+of+Code+2022&url=https%3A%2F%2Fadventofcode%2Ecom%2F2022%2Fday%2F2&related=ericwastl&hashtags=AdventOfCode) [Mastodon](<javascript:void(0);>)</span>]</span> this puzzle.

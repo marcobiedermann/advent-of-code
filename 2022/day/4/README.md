@@ -22,7 +22,7 @@ For the first few pairs, this list means:
 This example list uses single-digit section IDs to make it easier to draw; your actual list might contain larger numbers. Visually, these pairs of section assignments look like this:
 
     .234.....  2-4
-    .....678\.  6-8
+    .....678.  6-8
 
     .23......  2-3
     ...45....  4-5
@@ -30,14 +30,14 @@ This example list uses single-digit section IDs to make it easier to draw; your 
     ....567..  5-7
     ......789  7-9
 
-    .2345678\.  2-8
+    .2345678.  2-8
     ..34567..  3-7
 
     .....6...  6-6
     ...456...  4-6
 
     .23456...  2-6
-    ...45678\.  4-8
+    ...45678.  4-8
 
 Some of the pairs have noticed that one of their assignments _fully contains_ the other. For example, `2-8` fully contains `3-7`, and `6-6` is fully contained by `4-6`. In pairs where one assignment fully contains the other, one Elf in the pair would be exclusively cleaning sections their partner will already be cleaning, so these seem like the most in need of reconsideration. In this example, there are `_2_` such pairs.
 
@@ -47,7 +47,7 @@ Your puzzle answer was `511`.
 
 ## --- Part Two ---
 
-It seems like there is still quite a bit of duplicate work planned. Instead, the Elves would <span title="If you like this, you'll *love* axis-aligned bounding box intersection testing.">like</span> to know the number of pairs that _overlap at all_.
+It seems like there is still quite a bit of duplicate work planned. Instead, the Elves would like to know the number of pairs that _overlap at all_.
 
 In the above example, the first two pairs (`2-4,6-8` and `2-3,4-5`) don't overlap, while the remaining four pairs (`5-7,7-9`, `2-8,3-7`, `6-6,4-6`, and `2-6,4-8`) do overlap:
 
@@ -60,14 +60,6 @@ So, in this example, the number of overlapping assignment pairs is `_4_`.
 
 _In how many assignment pairs do the ranges overlap?_
 
-</article>
-
 Your puzzle answer was `821`.
 
 Both parts of this puzzle are complete! They provide two gold stars: \*\*
-
-At this point, you should [return to your Advent calendar](/2022) and try another puzzle.
-
-If you still want to see it, you can [get your puzzle input](4/input).
-
-You can also <span class="share">[Share<span class="share-content">on [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+%22Camp+Cleanup%22+%2D+Day+4+%2D+Advent+of+Code+2022&url=https%3A%2F%2Fadventofcode%2Ecom%2F2022%2Fday%2F4&related=ericwastl&hashtags=AdventOfCode) [Mastodon](<javascript:void(0);>)</span>]</span> this puzzle.

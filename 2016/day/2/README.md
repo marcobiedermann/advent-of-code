@@ -32,7 +32,7 @@ Your puzzle answer was `24862`.
 
 ## --- Part Two ---
 
-You finally arrive at the bathroom (it's a several minute walk from the lobby so visitors can behold the many fancy conference rooms and water coolers on this floor) and go to punch in the code. Much to your bladder's dismay, the keypad is not at all like you imagined it. Instead, you are confronted with the result of hundreds of man-hours of <span title="User Group 143 found a diamond shape to be the most environmentally friendly.">bathroom-keypad-design meetings:</span>
+You finally arrive at the bathroom (it's a several minute walk from the lobby so visitors can behold the many fancy conference rooms and water coolers on this floor) and go to punch in the code. Much to your bladder's dismay, the keypad is not at all like you imagined it. Instead, you are confronted with the result of hundreds of man-hours of bathroom-keypad-design meetings:
 
         1
       2 3 4
@@ -54,9 +54,3 @@ Using the same instructions in your puzzle input, what is the correct _bathroom 
 Your puzzle answer was `46C91`.
 
 Both parts of this puzzle are complete! They provide two gold stars: \*\*
-
-At this point, you should [return to your Advent calendar](/2016) and try another puzzle.
-
-If you still want to see it, you can [get your puzzle input](2/input).
-
-You can also [Share on [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+%22Bathroom+Security%22+%2D+Day+2+%2D+Advent+of+Code+2016&url=https%3A%2F%2Fadventofcode%2Ecom%2F2016%2Fday%2F2&related=ericwastl&hashtags=AdventOfCode) [Mastodon](<javascript:void(0);>)] this puzzle.

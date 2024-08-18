@@ -1,6 +1,6 @@
 ## --- Day 3: Rucksack Reorganization ---
 
-One Elf has the important job of loading all of the [rucksacks](https://en.wikipedia.org/wiki/Rucksack) with supplies for the <span title="Where there's jungle, there's hijinxs.">jungle</span> journey. Unfortunately, that Elf didn't quite follow the packing instructions, and so a few items now need to be rearranged.
+One Elf has the important job of loading all of the [rucksacks](https://en.wikipedia.org/wiki/Rucksack) with supplies for the jungle journey. Unfortunately, that Elf didn't quite follow the packing instructions, and so a few items now need to be rearranged.
 
 Each rucksack has two large _compartments_. All items of a given type are meant to go into exactly one of the two compartments. The Elf that did the packing failed to follow this rule for exactly one item type per rucksack.
 
@@ -66,9 +66,3 @@ Find the item type that corresponds to the badges of each three-Elf group. _What
 Your puzzle answer was `2683`.
 
 Both parts of this puzzle are complete! They provide two gold stars: \*\*
-
-At this point, you should [return to your Advent calendar](/2022) and try another puzzle.
-
-If you still want to see it, you can [get your puzzle input](3/input).
-
-You can also <span class="share">[Share<span class="share-content">on [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+%22Rucksack+Reorganization%22+%2D+Day+3+%2D+Advent+of+Code+2022&url=https%3A%2F%2Fadventofcode%2Ecom%2F2022%2Fday%2F3&related=ericwastl&hashtags=AdventOfCode) [Mastodon](<javascript:void(0);>)</span>]</span> this puzzle.

@@ -73,9 +73,3 @@ Use the binary numbers in your diagnostic report to calculate the oxygen generat
 Your puzzle answer was `4790390`.
 
 Both parts of this puzzle are complete! They provide two gold stars: \*\*
-
-At this point, you should [return to your Advent calendar](/2021) and try another puzzle.
-
-If you still want to see it, you can [get your puzzle input](3/input).
-
-You can also <[Share on [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+%22Binary+Diagnostic%22+%2D+Day+3+%2D+Advent+of+Code+2021&url=https%3A%2F%2Fadventofcode%2Ecom%2F2021%2Fday%2F3&related=ericwastl&hashtags=AdventOfCode) [Mastodon](<javascript:void(0);>)] this puzzle.

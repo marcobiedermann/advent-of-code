@@ -1,6 +1,6 @@
 ## --- Day 2: Dive! ---
 
-Now, you need to figure out how to <span title="Tank, I need a pilot program for a B212 helicopter.">pilot this thing</span>.
+Now, you need to figure out how to pilot this thing.
 
 It seems like the submarine can take a series of commands like `forward 1`, `down 2`, or `up 3`:
 
@@ -34,8 +34,6 @@ Calculate the horizontal position and depth you would have after following the p
 
 Your puzzle answer was `1962940`.
 
-<article class="day-desc">
-
 ## --- Part Two ---
 
 Based on your calculations, the planned course doesn't seem to make any sense. You find the submarine manual and discover that the process is actually slightly more complicated.
@@ -66,9 +64,3 @@ Using this new interpretation of the commands, calculate the horizontal position
 Your puzzle answer was `1813664422`.
 
 Both parts of this puzzle are complete! They provide two gold stars: \*\*
-
-At this point, you should [return to your Advent calendar](/2021) and try another puzzle.
-
-If you still want to see it, you can [get your puzzle input](2/input).
-
-You can also [Shareon [Twitter](https://twitter.com/intent/tweet?text=I%27ve+completed+%22Dive%21%22+%2D+Day+2+%2D+Advent+of+Code+2021&url=https%3A%2F%2Fadventofcode%2Ecom%2F2021%2Fday%2F2&related=ericwastl&hashtags=AdventOfCode) [Mastodon](<javascript:void(0);>)] this puzzle.

@@ -1,9 +1,9 @@
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
 import { describe, it } from 'node:test';
+import { getInput } from '../../../utils/file.ts';
 import { part1, part2 } from './index.ts';
 
-const input = (await readFile(`${import.meta.dirname}/input`, 'utf-8')).split('\n').map(Number);
+const input = (await getInput(import.meta.dirname)).split('\n').map(Number);
 const sampleInput = [199, 200, 208, 210, 200, 207, 240, 269, 260, 263];
 
 describe('2021 Day 1', () => {

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
 import { describe, it } from 'node:test';
+import { getInput } from '../../../utils/file.ts';
 import type { Slope } from './index.ts';
 import { part1, part2 } from './index.ts';
 
@@ -15,7 +15,7 @@ const exampleInput = `..##.........##.........##.........##.........##.........#
 #.##...#...#.##...#...#.##...#...#.##...#...#.##...#...#.##...#...
 #...##....##...##....##...##....##...##....##...##....##...##....#
 .#..#...#.#.#..#...#.#.#..#...#.#.#..#...#.#.#..#...#.#.#..#...#.#`.split('\n');
-const input = (await readFile(`${import.meta.dirname}/input`, 'utf-8')).split('\n');
+const input = (await getInput(import.meta.dirname)).split('\n');
 
 describe('Day 3', () => {
   describe('Part 1', () => {

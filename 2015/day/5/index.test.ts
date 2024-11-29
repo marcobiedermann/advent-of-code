@@ -1,15 +1,16 @@
-import { describe, expect, it } from 'vitest';
-import { part1, part2 } from '.';
-import { getInput } from '../../../utils/file';
-import { NEWLINE } from '../../../utils/string';
+import assert from 'node:assert/strict';
+import { describe, it } from 'node:test';
+import { getInput } from '../../../utils/file.ts';
+import { NEWLINE } from '../../../utils/string.ts';
+import { part1, part2 } from './index.ts';
 
-const input = (await getInput(__dirname)).split(NEWLINE);
+const input = (await getInput(import.meta.dirname)).split(NEWLINE);
 
 describe('2015', () => {
   describe('Day 5', () => {
     describe('Part 1', () => {
       it('should filter out nice words', () => {
-        expect(
+        assert.strictEqual(
           part1([
             'ugknbfddgicrmopn',
             'aaa',
@@ -17,17 +18,19 @@ describe('2015', () => {
             'haegwjzuvuyypxyu',
             'dvszwmarrgswjxmb',
           ]),
-        ).toBe(2);
-        expect(part1(input)).toBe(255);
+          2,
+        );
+        assert.strictEqual(part1(input), 255);
       });
     });
 
     describe('Part 2', () => {
       it('should filter out nice words', () => {
-        expect(part2(['qjhvhtzxzqqjkmpb', 'xxyxx', 'uurcxstgmygtbstg', 'ieodomkazucvgmuy'])).toBe(
+        assert.strictEqual(
+          part2(['qjhvhtzxzqqjkmpb', 'xxyxx', 'uurcxstgmygtbstg', 'ieodomkazucvgmuy']),
           2,
         );
-        expect(part2(input)).toBe(55);
+        assert.strictEqual(part2(input), 55);
       });
     });
   });

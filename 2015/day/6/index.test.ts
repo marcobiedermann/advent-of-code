@@ -1,21 +1,22 @@
-import { describe, expect, it } from 'vitest';
-import { part1, part2 } from '.';
-import { getInput } from '../../../utils/file';
-import { NEWLINE } from '../../../utils/string';
+import assert from 'node:assert/strict';
+import { describe, it } from 'node:test';
+import { getInput } from '../../../utils/file.ts';
+import { NEWLINE } from '../../../utils/string.ts';
+import { part1, part2 } from './index.ts';
 
-const input = (await getInput(__dirname)).split(NEWLINE);
+const input = (await getInput(import.meta.dirname)).split(NEWLINE);
 
 describe('2015', () => {
   describe('Day 6', () => {
     describe('Part 1', () => {
       it('should could could lit lights', () => {
-        expect(part1(input)).toBe(377891);
+        assert.strictEqual(part1(input), 377891);
       });
     });
 
     describe('Part 2', () => {
       it('should return the total brightness', () => {
-        expect(part2(input)).toBe(14110788);
+        assert.strictEqual(part2(input), 14110788);
       });
     });
   });

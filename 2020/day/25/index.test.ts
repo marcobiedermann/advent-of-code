@@ -1,16 +1,15 @@
+import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { describe, expect, it } from 'vitest';
-import { part1 } from '.';
+import { describe, it } from 'node:test';
+import { part1 } from './index.ts';
 
-const input = (await readFile(`${__dirname}/input`, 'utf-8')).split('\n').map(Number);
+const input = (await readFile(`${import.meta.dirname}/input`, 'utf-8')).split('\n').map(Number);
 
 describe('Day 25', () => {
   describe('Part 1', () => {
     it('should return the encryption key', () => {
-      expect.assertions(2);
-
-      expect(part1([5764801, 17807724])).toStrictEqual(14897079);
-      expect(part1(input)).toStrictEqual(17673381);
+      assert.strictEqual(part1([5764801, 17807724]), 14897079);
+      assert.strictEqual(part1(input), 17673381);
     });
   });
 });

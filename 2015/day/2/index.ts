@@ -1,4 +1,4 @@
-import { RADIX, sum } from '../../../utils/math';
+import { RADIX, sum } from '../../../utils/math.ts';
 
 function getArea(length: number, width: number): number {
   return length * width;

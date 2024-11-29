@@ -1,26 +1,23 @@
+import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { describe, expect, it } from 'vitest';
-import { part1, part2 } from '.';
+import { describe, it } from 'node:test';
+import { part1, part2 } from './index.ts';
 
-const sample = (await readFile(`${__dirname}/input.sample`, 'utf-8')).split('\n\n');
-const input = (await readFile(`${__dirname}/input`, 'utf-8')).split('\n\n');
+const sample = (await readFile(`${import.meta.dirname}/input.sample`, 'utf-8')).split('\n\n');
+const input = (await readFile(`${import.meta.dirname}/input`, 'utf-8')).split('\n\n');
 
 describe('Day 1', () => {
   describe('Part 1', () => {
     it('should find the elf carrying the most calories', () => {
-      expect.assertions(2);
-
-      expect(part1(sample)).toStrictEqual(24000);
-      expect(part1(input)).toStrictEqual(71502);
+      assert.strictEqual(part1(sample), 24000);
+      assert.strictEqual(part1(input), 71502);
     });
   });
 
   describe('Part 2', () => {
     it('should find the top three elves carrying the most calories', () => {
-      expect.assertions(2);
-
-      expect(part2(sample)).toStrictEqual(45000);
-      expect(part2(input)).toStrictEqual(208191);
+      assert.strictEqual(part2(sample), 45000);
+      assert.strictEqual(part2(input), 208191);
     });
   });
 });

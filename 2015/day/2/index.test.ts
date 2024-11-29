@@ -1,25 +1,26 @@
-import { describe, expect, it } from 'vitest';
-import { part1, part2 } from '.';
-import { getInput } from '../../../utils/file';
-import { NEWLINE } from '../../../utils/string';
+import assert from 'node:assert/strict';
+import { describe, it } from 'node:test';
+import { getInput } from '../../../utils/file.ts';
+import { NEWLINE } from '../../../utils/string.ts';
+import { part1, part2 } from './index.ts';
 
-const input = (await getInput(__dirname)).split(NEWLINE);
+const input = (await getInput(import.meta.dirname)).split(NEWLINE);
 
 describe('2015', () => {
   describe('Day 1', () => {
     describe('Part 1', () => {
       it('should return total square feet of wrapping paper', () => {
-        expect(part1(['2x3x4'])).toBe(58);
-        expect(part1(['1x1x10'])).toBe(43);
-        expect(part1(input)).toBe(1598415);
+        assert.strictEqual(part1(['2x3x4']), 58);
+        assert.strictEqual(part1(['1x1x10']), 43);
+        assert.strictEqual(part1(input), 1598415);
       });
     });
 
     describe('Part 2', () => {
       it('should return total feet of ribbon', () => {
-        expect(part2(['2x3x4'])).toBe(34);
-        expect(part2(['1x1x10'])).toBe(14);
-        expect(part2(input)).toBe(3812909);
+        assert.strictEqual(part2(['2x3x4']), 34);
+        assert.strictEqual(part2(['1x1x10']), 14);
+        assert.strictEqual(part2(input), 3812909);
       });
     });
   });

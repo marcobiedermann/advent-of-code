@@ -1,6 +1,8 @@
+import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { describe, expect, it } from 'vitest';
-import { Slope, part1, part2 } from '.';
+import { describe, it } from 'node:test';
+import type { Slope } from './index.ts';
+import { part1, part2 } from './index.ts';
 
 const exampleInput = `..##.........##.........##.........##.........##.........##.......
 #...#...#..#...#...#..#...#...#..#...#...#..#...#...#..#...#...#..
@@ -13,24 +15,20 @@ const exampleInput = `..##.........##.........##.........##.........##.........#
 #.##...#...#.##...#...#.##...#...#.##...#...#.##...#...#.##...#...
 #...##....##...##....##...##....##...##....##...##....##...##....#
 .#..#...#.#.#..#...#.#.#..#...#.#.#..#...#.#.#..#...#.#.#..#...#.#`.split('\n');
-const input = (await readFile(`${__dirname}/input`, 'utf-8')).split('\n');
+const input = (await readFile(`${import.meta.dirname}/input`, 'utf-8')).split('\n');
 
 describe('Day 3', () => {
   describe('Part 1', () => {
     it('should return number of trees', () => {
-      expect.assertions(2);
-
       const slope: Slope = [3, 1];
 
-      expect(part1(exampleInput, slope)).toStrictEqual(7);
-      expect(part1(input, slope)).toStrictEqual(145);
+      assert.strictEqual(part1(exampleInput, slope), 7);
+      assert.strictEqual(part1(input, slope), 145);
     });
   });
 
   describe('Part 2', () => {
     it('should return number of trees on all slopes', () => {
-      expect.assertions(2);
-
       const slopes: Slope[] = [
         [1, 1],
         [3, 1],
@@ -39,8 +37,8 @@ describe('Day 3', () => {
         [1, 2],
       ];
 
-      expect(part2(exampleInput, slopes)).toStrictEqual(336);
-      expect(part2(input, slopes)).toStrictEqual(3424528800);
+      assert.strictEqual(part2(exampleInput, slopes), 336);
+      assert.strictEqual(part2(input, slopes), 3424528800);
     });
   });
 });

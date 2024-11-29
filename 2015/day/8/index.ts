@@ -1,4 +1,4 @@
-import { sum } from '../../../utils/math';
+import { sum } from '../../../utils/math.ts';
 
 function mapString(str: string): number {
   const { length: totalCharacters } = str;

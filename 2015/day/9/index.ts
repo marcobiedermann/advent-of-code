@@ -1,4 +1,4 @@
-import { RADIX } from '../../../utils/math';
+import { RADIX } from '../../../utils/math.ts';
 
 function permutater<T>(arr: T[]) {
   const result: T[][] = [];

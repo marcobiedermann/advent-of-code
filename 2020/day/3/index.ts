@@ -1,4 +1,4 @@
-export type Slope = [number, number];
+type Slope = [number, number];
 
 function part1(lines: string[], slope: Slope, tree = '#'): number {
   const [right, down] = slope;
@@ -23,3 +23,4 @@ function part2(lines: string[], slopes: Slope[]): number {
 }
 
 export { part1, part2 };
+export type { Slope };

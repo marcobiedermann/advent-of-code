@@ -1,12 +1,11 @@
-import { describe, expect, it } from 'vitest';
-import { part1 } from '.';
+import assert from 'node:assert/strict';
+import { describe, it } from 'node:test';
+import { part1 } from './index.ts';
 
 describe('Day 15', () => {
   describe('Part 1', () => {
     it('should', () => {
-      expect.assertions(1);
-
-      expect(part1()).toStrictEqual(0);
+      assert.strictEqual(part1(), 0);
     });
   });
 });

@@ -1,15 +1,14 @@
+import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { describe, expect, it } from 'vitest';
-import { part1 } from '.';
+import { describe, it } from 'node:test';
+import { part1 } from './index.ts';
 
-const input = (await readFile(`${__dirname}/input`, 'utf-8')).split('').map(Number);
+const input = (await readFile(`${import.meta.dirname}/input`, 'utf-8')).split('').map(Number);
 
 describe('Day 1', () => {
   describe('Part 1', () => {
     it('should return the sum of all digits that match the next digit in the list', () => {
-      expect.assertions(1);
-
-      expect(part1(input)).toStrictEqual(1097);
+      assert.strictEqual(part1(input), 1097);
     });
   });
 });

@@ -1,27 +1,24 @@
+import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { describe, expect, it } from 'vitest';
-import { part1, part2 } from '.';
+import { describe, it } from 'node:test';
+import { part1, part2 } from './index.ts';
 
-const input = (await readFile(`${__dirname}/input`, 'utf-8')).split('\n');
+const input = (await readFile(`${import.meta.dirname}/input`, 'utf-8')).split('\n');
 
 describe('Day 5', () => {
   describe('Part 1', () => {
     it('should return highest seat on boarding pass', () => {
-      expect.assertions(5);
-
-      expect(part1(['FBFBBFFRLR'])).toStrictEqual(357);
-      expect(part1(['BFFFBBFRRR'])).toStrictEqual(567);
-      expect(part1(['FFFBBBFRRR'])).toStrictEqual(119);
-      expect(part1(['BBFFBBFRLL'])).toStrictEqual(820);
-      expect(part1(input)).toStrictEqual(970);
+      assert.strictEqual(part1(['FBFBBFFRLR']), 357);
+      assert.strictEqual(part1(['BFFFBBFRRR']), 567);
+      assert.strictEqual(part1(['FFFBBBFRRR']), 119);
+      assert.strictEqual(part1(['BBFFBBFRLL']), 820);
+      assert.strictEqual(part1(input), 970);
     });
   });
 
   describe('Part 2', () => {
     it('should return the ID of seat', () => {
-      expect.assertions(1);
-
-      expect(part2(input)).toStrictEqual(587);
+      assert.strictEqual(part2(input), 587);
     });
   });
 });

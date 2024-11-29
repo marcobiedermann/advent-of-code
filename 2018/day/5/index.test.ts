@@ -1,16 +1,15 @@
+import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { describe, expect, it } from 'vitest';
-import { part1 } from '.';
+import { describe, it } from 'node:test';
+import { part1 } from './index.ts';
 
-const input = await readFile(`${__dirname}/input`, 'utf-8');
+const input = await readFile(`${import.meta.dirname}/input`, 'utf-8');
 
 describe('Day 5', () => {
   describe('Part 1', () => {
     it('should return the number of remaining units', () => {
-      expect.assertions(2);
-
-      expect(part1('dabAcCaCBAcCcaDA')).toStrictEqual(10);
-      expect(part1(input)).toStrictEqual(11152);
+      assert.strictEqual(part1('dabAcCaCBAcCcaDA'), 10);
+      assert.strictEqual(part1(input), 11152);
     });
   });
 });

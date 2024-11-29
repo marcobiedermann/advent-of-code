@@ -1,4 +1,4 @@
-import { RADIX, sum } from '../../../utils/math';
+import { RADIX, sum } from '../../../utils/math.ts';
 
 const BASE = 1000;
 

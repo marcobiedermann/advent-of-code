@@ -1,32 +1,29 @@
+import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { describe, expect, it } from 'vitest';
-import { part1, part2 } from '.';
+import { describe, it } from 'node:test';
+import { part1, part2 } from './index.ts';
 
-const input = await readFile(`${__dirname}/input`, 'utf-8');
+const input = await readFile(`${import.meta.dirname}/input`, 'utf-8');
 
 describe('Day 6', () => {
   describe('Part 1', () => {
     it('should find the number of characters that need to be processed before the first start-of-package marker', () => {
-      expect.assertions(5);
-
-      expect(part1('bvwbjplbgvbhsrlpgdmjqwftvncz')).toStrictEqual(5);
-      expect(part1('nppdvjthqldpwncqszvftbrmjlhg')).toStrictEqual(6);
-      expect(part1('nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg')).toStrictEqual(10);
-      expect(part1('zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw')).toStrictEqual(11);
-      expect(part1(input)).toStrictEqual(1155);
+      assert.strictEqual(part1('bvwbjplbgvbhsrlpgdmjqwftvncz'), 5);
+      assert.strictEqual(part1('nppdvjthqldpwncqszvftbrmjlhg'), 6);
+      assert.strictEqual(part1('nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg'), 10);
+      assert.strictEqual(part1('zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw'), 11);
+      assert.strictEqual(part1(input), 1155);
     });
   });
 
   describe('Part 2', () => {
     it('should find the number of characters that need to be processed before the first start-of-package marker', () => {
-      expect.assertions(6);
-
-      expect(part2('mjqjpqmgbljsphdztnvjfqwrcgsmlb')).toStrictEqual(19);
-      expect(part2('bvwbjplbgvbhsrlpgdmjqwftvncz')).toStrictEqual(23);
-      expect(part2('nppdvjthqldpwncqszvftbrmjlhg')).toStrictEqual(23);
-      expect(part2('nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg')).toStrictEqual(29);
-      expect(part2('zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw')).toStrictEqual(26);
-      expect(part2(input)).toStrictEqual(2789);
+      assert.strictEqual(part2('mjqjpqmgbljsphdztnvjfqwrcgsmlb'), 19);
+      assert.strictEqual(part2('bvwbjplbgvbhsrlpgdmjqwftvncz'), 23);
+      assert.strictEqual(part2('nppdvjthqldpwncqszvftbrmjlhg'), 23);
+      assert.strictEqual(part2('nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg'), 29);
+      assert.strictEqual(part2('zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw'), 26);
+      assert.strictEqual(part2(input), 2789);
     });
   });
 });

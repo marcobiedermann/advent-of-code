@@ -17,7 +17,3 @@ updates:
         patterns:
           - '@types/lodash-es'
           - 'lodash-es'
-      vitest:
-        patterns:
-          - '@vitest/*'
-          - 'vitest'

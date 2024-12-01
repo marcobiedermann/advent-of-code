@@ -9,6 +9,7 @@ My attempt of solving [Advent of Code](https://adventofcode.com/) puzzles in Jav
 ## Table of Contents
 
 - [Events](#events)
+  - [2024](#2024)
   - [2023](#2023)
   - [2022](#2022)
   - [2021](#2021)
@@ -23,6 +24,36 @@ My attempt of solving [Advent of Code](https://adventofcode.com/) puzzles in Jav
 - [License](#license)
 
 ## Events
+
+#### 2024
+
+| Day                   | Stars  |
+| --------------------- | ------ |
+| [Day 25](2024/day/25) |        |
+| [Day 24](2024/day/24) |        |
+| [Day 23](2024/day/23) |        |
+| [Day 22](2024/day/22) |        |
+| [Day 21](2024/day/21) |        |
+| [Day 20](2024/day/20) |        |
+| [Day 19](2024/day/19) |        |
+| [Day 18](2024/day/18) |        |
+| [Day 17](2024/day/17) |        |
+| [Day 16](2024/day/16) |        |
+| [Day 15](2024/day/15) |        |
+| [Day 14](2024/day/14) |        |
+| [Day 13](2024/day/13) |        |
+| [Day 12](2024/day/12) |        |
+| [Day 11](2024/day/11) |        |
+| [Day 10](2024/day/10) |        |
+| [Day 9](2024/day/9)   |        |
+| [Day 8](2024/day/8)   |        |
+| [Day 7](2024/day/7)   |        |
+| [Day 6](2024/day/6)   |        |
+| [Day 5](2024/day/5)   |        |
+| [Day 4](2024/day/4)   |        |
+| [Day 3](2024/day/3)   |        |
+| [Day 2](2024/day/2)   |        |
+| [Day 1](2024/day/1)   | ⭐️⭐️ |
 
 #### 2023
 

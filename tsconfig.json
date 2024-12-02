@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2022",
     "module": "ESNext",
-    "lib": ["ES2020"],
+    "lib": ["ESNext"],
     "skipLibCheck": true,
 
     /* Bundler mode */
@@ -17,6 +17,5 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
-  },
-  "include": ["vite.config.ts"]
+  }
 }

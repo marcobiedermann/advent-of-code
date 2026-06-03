@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/marcobiedermann/advent-of-code#readme",
   "devDependencies": {
-    "@eslint/js": "^9.39.2",
+    "@eslint/js": "^10.0.1",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^24.10.1",
     "eslint": "^9.39.2",

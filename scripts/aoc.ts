@@ -5,6 +5,11 @@ import { parseArgs } from 'node:util';
 import { input as promptInput, select } from '@inquirer/prompts';
 import TurndownService from 'turndown';
 
+interface AocTarget {
+  year: number;
+  day: number;
+}
+
 const CURRENT_YEAR = new Date().getFullYear();
 
 async function exists(path: string): Promise<boolean> {
@@ -16,7 +21,16 @@ async function exists(path: string): Promise<boolean> {
   }
 }
 
-async function resolveArgs(): Promise<{ year: number; day: number }> {
+async function writeIfAbsent(path: string, content: string): Promise<void> {
+  if (await exists(path)) {
+    console.warn(`⚠ ${path} already exists, skipping.`);
+    return;
+  }
+  await writeFile(path, content, 'utf8');
+  console.log(`✓ Wrote ${path}`);
+}
+
+async function resolveArgs(): Promise<AocTarget> {
   const { values, positionals } = parseArgs({
     args: process.argv.slice(2),
     options: {
@@ -58,54 +72,42 @@ async function resolveSession(): Promise<string> {
     return process.env.AOC_SESSION;
   }
 
-  const session = await promptInput({ message: 'Enter your AOC_SESSION cookie value' });
-  return session;
+  return promptInput({ message: 'Enter your AOC_SESSION cookie value' });
 }
 
-async function fetchPuzzlePage(year: number, day: number, session: string): Promise<string> {
-  const url = `https://adventofcode.com/${year}/day/${day}`;
+async function aocFetch(url: string, session: string): Promise<string> {
   const response = await fetch(url, {
     headers: { Cookie: `session=${session}` },
   });
   if (!response.ok) {
-    throw new Error(`Failed to fetch puzzle page: ${response.status} ${response.statusText}`);
-  }
-  return response.text();
-}
-
-async function fetchPuzzleInput(year: number, day: number, session: string): Promise<string> {
-  const url = `https://adventofcode.com/${year}/day/${day}/input`;
-  const response = await fetch(url, {
-    headers: { Cookie: `session=${session}` },
-  });
-  if (!response.ok) {
-    throw new Error(`Failed to fetch puzzle input: ${response.status} ${response.statusText}`);
+    throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
   }
   return response.text();
 }
 
 function htmlToMarkdown(html: string): string {
-  const td = new TurndownService();
-  // Extract only the article content
-  const articleMatch = html.match(/<article[^>]*>([\s\S]*?)<\/article>/);
-  const content = articleMatch ? articleMatch[0] : html;
-  return td.turndown(content);
+  const turndownService = new TurndownService();
+  const articles = [...html.matchAll(/<article[^>]*>[\s\S]*?<\/article>/g)].map((m) => m[0]);
+  const content = articles.length > 0 ? articles.join('\n\n') : html;
+  return turndownService.turndown(content);
 }
 
 function scaffoldIndex(): string {
   return `function part1(input: string): unknown {
-  return input;
+  void input;
+  return undefined;
 }
 
 function part2(input: string): unknown {
-  return input;
+  void input;
+  return undefined;
 }
 
 export { part1, part2 };
 `;
 }
 
-function scaffoldTest(year: number, day: number): string {
+function scaffoldTest({ year, day }: AocTarget): string {
   return `import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 import { getInput } from '../../../utils/file.ts';
@@ -131,58 +133,47 @@ describe('${year}', () => {
 `;
 }
 
-async function updateReadme(year: number, day: number): Promise<void> {
+async function updateReadme({ year, day }: AocTarget): Promise<void> {
   const readmePath = new URL('../README.md', import.meta.url).pathname;
   let content = await readFile(readmePath, 'utf8');
 
-  const dayLink = `[Day ${day}](${year}/day/${day})`;
   const paddedDay =
     day < 10 ? `[Day ${day}](${year}/day/${day})  ` : `[Day ${day}](${year}/day/${day})`;
 
-  // Check if year section already exists
-  const yearHeadingRegex = new RegExp(`#### ${year}`);
+  // Match both ### and #### heading levels used in existing README
+  const yearHeadingRegex = new RegExp(`#{3,4} ${year}`);
   if (yearHeadingRegex.test(content)) {
-    // Find the table for this year and insert new row in descending order
     const yearSectionRegex = new RegExp(
-      `(#### ${year}\\s*\\n\\s*\\|[^\\n]+\\|\\s*\\n\\s*\\|[-| ]+\\|\\s*\\n)((?:\\s*\\|[^\\n]+\\|\\s*\\n)*)`,
+      `(#{3,4} ${year}\\s*\\n\\s*\\|[^\\n]+\\|\\s*\\n\\s*\\|[-| ]+\\|\\s*\\n)((?:\\s*\\|[^\\n]+\\|\\s*\\n)*)`,
     );
     const match = content.match(yearSectionRegex);
     if (match) {
       const tableStart = match[1];
       const existingRows = match[2];
 
-      // Check if this day already exists
       if (existingRows.includes(`/${year}/day/${day})`)) {
         console.log(`README already has entry for ${year} Day ${day}, skipping.`);
         return;
       }
 
-      // Build new row - match column widths from existing rows
-      const newRow = `| ${paddedDay} |        |\n`;
-      // Insert at the top (highest day = first row)
-      const firstRowMatch = existingRows.match(/(\s*\|[^\n]+\|\s*\n)/);
-      let newRows: string;
-      if (firstRowMatch) {
-        // Find the right insertion point (descending order)
-        const rows = existingRows.split('\n').filter((r) => r.trim().startsWith('|'));
-        const insertIndex = rows.findIndex((r) => {
-          const m = r.match(/Day (\d+)/);
-          return m ? parseInt(m[1], 10) < day : false;
-        });
-        if (insertIndex === -1) {
-          newRows = existingRows + newRow;
-        } else {
-          rows.splice(insertIndex, 0, `| ${paddedDay} |        |`);
-          newRows = rows.map((r) => r + '\n').join('');
-        }
+      const newRow = `| ${paddedDay} |        |`;
+      const rows = existingRows.split('\n').filter((r) => r.trim().startsWith('|'));
+      const insertIndex = rows.findIndex((r) => {
+        const m = r.match(/Day (\d+)/);
+        return m ? parseInt(m[1], 10) < day : false;
+      });
+
+      if (insertIndex === -1) {
+        rows.push(newRow);
       } else {
-        newRows = existingRows + newRow;
+        rows.splice(insertIndex, 0, newRow);
       }
 
+      const newRows = rows.map((r) => r + '\n').join('');
       content = content.replace(yearSectionRegex, tableStart + newRows);
     }
   } else {
-    // Add new year section before "## Setup" or at end of Events section
+    const dayLink = `[Day ${day}](${year}/day/${day})`;
     const fullTable = `#### ${year}
 
 | Day                   | Stars |
@@ -190,19 +181,7 @@ async function updateReadme(year: number, day: number): Promise<void> {
 | ${dayLink} |       |
 
 `;
-    // Insert before "## Setup"
     content = content.replace('## Setup', fullTable + '## Setup');
-
-    // Also update Table of Contents
-    const tocYearEntry = `  - [${year}](#${year})`;
-    if (!content.includes(tocYearEntry)) {
-      // Insert after the last year in the ToC
-      const lastYearInToc = content.match(/(  - \[\d{4}\]\(#\d{4}\)\n)/g);
-      if (lastYearInToc) {
-        const last = lastYearInToc[lastYearInToc.length - 1];
-        content = content.replace(last, last + tocYearEntry + '\n');
-      }
-    }
   }
 
   await writeFile(readmePath, content, 'utf8');
@@ -210,59 +189,23 @@ async function updateReadme(year: number, day: number): Promise<void> {
 }
 
 async function main() {
-  const { year, day } = await resolveArgs();
+  const target = await resolveArgs();
+  const { year, day } = target;
   const session = await resolveSession();
 
   const dir = `${process.cwd()}/${year}/day/${day}`;
   await mkdir(dir, { recursive: true });
 
-  const readmePath = `${dir}/README.md`;
-  const inputPath = `${dir}/input`;
-  const indexPath = `${dir}/index.ts`;
-  const testPath = `${dir}/index.test.ts`;
+  const html = await aocFetch(`https://adventofcode.com/${year}/day/${day}`, session);
+  await writeIfAbsent(`${dir}/README.md`, htmlToMarkdown(html));
 
-  let skipped = false;
+  const puzzleInput = await aocFetch(`https://adventofcode.com/${year}/day/${day}/input`, session);
+  await writeIfAbsent(`${dir}/input`, puzzleInput);
 
-  if (await exists(readmePath)) {
-    console.warn(`⚠ ${readmePath} already exists, skipping.`);
-    skipped = true;
-  } else {
-    const html = await fetchPuzzlePage(year, day, session);
-    const markdown = htmlToMarkdown(html);
-    await writeFile(readmePath, markdown, 'utf8');
-    console.log(`✓ Wrote ${readmePath}`);
-  }
+  await writeIfAbsent(`${dir}/index.ts`, scaffoldIndex());
+  await writeIfAbsent(`${dir}/index.test.ts`, scaffoldTest(target));
 
-  if (await exists(inputPath)) {
-    console.warn(`⚠ ${inputPath} already exists, skipping.`);
-    skipped = true;
-  } else {
-    const puzzleInput = await fetchPuzzleInput(year, day, session);
-    await writeFile(inputPath, puzzleInput, 'utf8');
-    console.log(`✓ Wrote ${inputPath}`);
-  }
-
-  if (await exists(indexPath)) {
-    console.warn(`⚠ ${indexPath} already exists, skipping.`);
-    skipped = true;
-  } else {
-    await writeFile(indexPath, scaffoldIndex(), 'utf8');
-    console.log(`✓ Wrote ${indexPath}`);
-  }
-
-  if (await exists(testPath)) {
-    console.warn(`⚠ ${testPath} already exists, skipping.`);
-    skipped = true;
-  } else {
-    await writeFile(testPath, scaffoldTest(year, day), 'utf8');
-    console.log(`✓ Wrote ${testPath}`);
-  }
-
-  if (!skipped) {
-    await updateReadme(year, day);
-  } else {
-    await updateReadme(year, day);
-  }
+  await updateReadme(target);
 }
 
 main().catch((err) => {

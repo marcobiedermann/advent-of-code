@@ -4,7 +4,11 @@
   "description": "My attempt of solving Advent of Code puzzles.",
   "private": true,
   "type": "module",
+  "bin": {
+    "aoc": "./scripts/aoc.ts"
+  },
   "scripts": {
+    "aoc": "node --experimental-strip-types ./scripts/aoc.ts",
     "check": "tsc --noEmit",
     "format": "prettier --write .",
     "lint:js": "eslint .",
@@ -35,13 +39,16 @@
   "homepage": "https://github.com/marcobiedermann/advent-of-code#readme",
   "devDependencies": {
     "@eslint/js": "^9.39.2",
+    "@inquirer/prompts": "^8.5.2",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^24.10.1",
+    "@types/turndown": "^5.0.6",
     "eslint": "^9.39.2",
     "globals": "^16.5.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
     "prettier": "^3.9.4",
+    "turndown": "^7.2.4",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.62.1"
   },
